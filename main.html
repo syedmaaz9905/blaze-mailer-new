@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="main.css" type="text/css">
+
+    <title>Blaze Mailer</title>
+
+</head>
+
+<body>
+    <div class="first-row">
+        <h1 class="first-row-heading">Blaze Mailer</h1>
+    </div>
+
+    <div class="content-switcher">
+        <button class="content-switcher-button active" onclick="switchContent('content1', this)">Content 1</button>
+        <button class="content-switcher-button" onclick="switchContent('content2', this)">Content 2</button>
+    </div>
+
+    <div class="content" id="content1">
+        <div class="second-row-main">
+            <div class="second-row-first-box">
+
+                <div class="second-row-first-box-first-inner">
+                    <video width="100" height="100" autoplay loop>
+                        <source src="assets/upload_animation.mp4" type="video/mp4">
+                    </video>
+                    <h2 class="heading-uplaod-info">Uplaods Info</h2>
+                </div>
+
+                <div class="second-row-first-box-second-inner">
+                    <p class="upload-recipient-file-text">Upload Recipients File</p>
+                    <div class="upload-recipient-file-button-getfile">
+                        <input type="text" id="recipientFileInput" class="upload-recipient-file-getfile"
+                            placeholder="No File Chosen" readonly onclick="openFileUploader('recipient')">
+                        <label for="recipientFileInput" class="file-label upload-recipient-file-button">Upload</label>
+                        <input type="file" id="recipientFileUploader" style="display: none;"
+                            onchange="displayFileName('recipient', this)">
+                    </div>
+                    <div class="upload-html-file-text-checkbox">
+                        <p class="upload-html-file-text">Upload HTML File</p>
+                        <div class="upload-html-file-checkbox">
+                            <input type="checkbox" id="directoryCheckbox">
+                            <p>Directory?</p>
+                        </div>
+                    </div>
+                    <div class="upload-html-file-button-getfile">
+                        <input type="text" id="htmlFileInput" class="upload-html-file-getfile"
+                            placeholder="No File Chosen" readonly onclick="openFileUploader('html')">
+                        <label for="htmlFileInput" class="file-label upload-html-file-button">Upload</label>
+                        <input type="file" id="htmlFileUploader" style="display: none;"
+                            onchange="displayFileName('html', this)">
+                    </div>
+                    <div class="upload-credential-text-checkbox">
+                        <p class="upload-credential-text">Upload Credential</p>
+                        <div class="upload-credential-file-checkbox">
+                            <input type="checkbox" id="credentialFileCheckbox">
+                            <label for="credentialFileCheckbox"></label>
+                            <p>File?</p>
+                        </div>
+                        <div class="upload-credential-directory-checkbox">
+                            <input type="checkbox" id="credentialDirectoryCheckbox">
+                            <label for="credentialDirectoryCheckbox"></label>
+                            <p>Directory?</p>
+                        </div>
+                    </div>
+                    <div class="upload-credential-button-getfile">
+                        <input type="text" id="credentialFileInput" class="upload-credential-getfile"
+                            placeholder="No File Chosen" readonly onclick="openFileUploader('credential')">
+                        <label for="credentialFileInput" class="file-label upload-credential-button">Upload</label>
+                        <input type="file" id="credentialFileUploader" style="display: none;"
+                            onchange="displayFileName('credential', this)">
+                    </div>
+                </div>
+            </div>
+            <div class="second-row-second-box">
+                <div class="second-row-second-box-first-inner">
+                    <video width="100" height="100" autoplay loop>
+                        <source src="assets/description_animation.mp4" type="video/mp4">
+                    </video>
+                    <h2 class="heading-description-info">Description Info</h2>
+                </div>
+                <div class="second-row-second-box-second-inner">
+                    <div class="upload-description-info-checkbox">
+                        <input type="checkbox" id="descriptionInfoDirectoryCheckbox">
+                        <p>Directory?</p>
+                    </div>
+                    <div class="subject-name-text-fields">
+                        <div class="subject-text-field">
+                            <label for="subject">Subject: </label>
+                            <input type="text" id="subject" name="subject" placeholder="Affirmation" required />
+                        </div>
+                        <div class="name-text-field">
+                            <label for="name">Name(Spoof): </label>
+                            <input type="text" id="name" name="name" placeholder="Affirmation" required />
+                        </div>
+                    </div>
+                    <div class="text-area-main">
+                        <p>Mail Description:</p>
+                        <textarea class="text-area" placeholder="Write message here..."></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="third-row-main">
+            <div class="third-row-main-inner">
+                <div class="third-row-video-options">
+                    <video width="75" height="75" autoplay loop>
+                        <source src="assets/options_animation.mp4" type="video/mp4">
+                    </video>
+                    <h2 class="third-row-options">Options</h2>
+                </div>
+                <div class="third-row-html-format-text-checkbox">
+                    <div class="third-row-htmlformat-pdfimage">
+                        <p class="third-row-html-format-text">Send HTML in format?</p>
+                        <div class="third-row-html-format-checkbox-pdf">
+                            <input type="checkbox" id="pdfCheckbox">
+                            <label for="pdfCheckbox"></label>
+                            <p>PDF</p>
+                        </div>
+                        <div class="third-row-html-format-checkbox-image">
+                            <input type="checkbox" id="imageCheckbox">
+                            <label for="imageCheckbox"></label>
+                            <p>Image</p>
+                        </div>
+                    </div>
+                    <div class="third-row-htmlformat-noyes">
+                        <p class="third-row-htmlformat-text">Send HTML in format?</p>
+                        <div class="third-row-htmlformat-checkbox-no">
+                            <input type="checkbox" id="noCheckbox">
+                            <label for="noCheckbox"></label>
+                            <p>No</p>
+                        </div>
+                        <div class="third-row-html-format-checkbox-yes">
+                            <input type="checkbox" id="yesCheckbox">
+                            <label for="yesCheckbox"></label>
+                            <p>Yes</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="third-row-buttons">
+                <button class="third-row-button1" onclick="shareData()">Submit Mail</button>
+                <button class="third-row-button2">Logout</button>
+            </div>
+        </div>
+        <div class="fourth-row-main">
+            <table>
+                <thead>
+                    <tr>
+                        <th>S.No.</th>
+                        <th>Mail ID</th>
+                        <th>Sent To</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>18vsadb65dsfe654</td>
+                        <td>Sent</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>18vsadb65dsfe654</td>
+                        <td>Sent</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>18vsadb65dsfe654</td>
+                        <td>Sent</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="last-row">
+            <p>Blaze Mailer - Bulk Mail Sender | Product of VexaByte Team | Email Support: vexabyteofficial@gmail.com |
+                Telegram Support: Zolocrypto</p>
+        </div>
+    </div>
+
+    <div class="content" id="content2">
+        <div class="second-row-main">
+            <div class="second-row-first-box">
+
+                <div class="second-row-first-box-first-inner">
+                    <video width="100" height="100" autoplay loop>
+                        <source src="assets/upload_animation.mp4" type="video/mp4">
+                    </video>
+                    <h2 class="heading-uplaod-info">Uplaods Info</h2>
+                </div>
+
+                <div class="second-row-first-box-second-inner">
+                    <p class="upload-recipient-file-text">Upload Recipients File</p>
+                    <div class="upload-recipient-file-button-getfile">
+                        <input type="text" id="recipientFileInput" class="upload-recipient-file-getfile"
+                            placeholder="No File Chosen" readonly onclick="openFileUploader('recipient')">
+                        <label for="recipientFileInput" class="file-label upload-recipient-file-button">Upload</label>
+                        <input type="file" id="recipientFileUploader" style="display: none;"
+                            onchange="displayFileName('recipient', this)">
+                    </div>
+                    <div class="upload-html-file-text-checkbox">
+                        <p class="upload-html-file-text">Upload HTML File</p>
+                        <div class="upload-html-file-checkbox">
+                            <input type="checkbox" id="directoryCheckbox">
+                            <p>Directory?</p>
+                        </div>
+                    </div>
+                    <div class="upload-html-file-button-getfile">
+                        <input type="text" id="htmlFileInput" class="upload-html-file-getfile"
+                            placeholder="No File Chosen" readonly onclick="openFileUploader('html')">
+                        <label for="htmlFileInput" class="file-label upload-html-file-button">Upload</label>
+                        <input type="file" id="htmlFileUploader" style="display: none;"
+                            onchange="displayFileName('html', this)">
+                    </div>
+                    <div class="upload-credential-text-checkbox">
+                        <p class="upload-credential-text">Upload Credential</p>
+                        <div class="upload-credential-file-checkbox">
+                            <input type="checkbox" id="credentialFileCheckbox">
+                            <label for="credentialFileCheckbox"></label>
+                            <p>File?</p>
+                        </div>
+                        <div class="upload-credential-directory-checkbox">
+                            <input type="checkbox" id="credentialDirectoryCheckbox">
+                            <label for="credentialDirectoryCheckbox"></label>
+                            <p>Directory?</p>
+                        </div>
+                    </div>
+                    <div class="upload-credential-button-getfile">
+                        <input type="text" id="credentialFileInput" class="upload-credential-getfile"
+                            placeholder="No File Chosen" readonly onclick="openFileUploader('credential')">
+                        <label for="credentialFileInput" class="file-label upload-credential-button">Upload</label>
+                        <input type="file" id="credentialFileUploader" style="display: none;"
+                            onchange="displayFileName('credential', this)">
+                    </div>
+                </div>
+            </div>
+            <div class="second-row-second-box">
+                <div class="second-row-second-box-first-inner">
+                    <video width="100" height="100" autoplay loop>
+                        <source src="assets/description_animation.mp4" type="video/mp4">
+                    </video>
+                    <h2 class="heading-description-info">Description Info</h2>
+                </div>
+                <div class="second-row-second-box-second-inner">
+                    <div class="upload-description-info-checkbox">
+                        <input type="checkbox" id="descriptionInfoDirectoryCheckbox">
+                        <p>Directory?</p>
+                    </div>
+                    <div class="subject-name-text-fields">
+                        <div class="subject-text-field">
+                            <label for="subject">Subject: </label>
+                            <input type="text" id="subject" name="subject" placeholder="Affirmation" required />
+                        </div>
+                        <div class="name-text-field">
+                            <label for="name">Name(Spoof): </label>
+                            <input type="text" id="name" name="name" placeholder="Affirmation" required />
+                        </div>
+                    </div>
+                    <div class="text-area-main">
+                        <p>Mail Description:</p>
+                        <textarea class="text-area" placeholder="Write message here..."></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="third-row-main">
+            <div class="third-row-main-inner">
+                <div class="third-row-video-options">
+                    <video width="75" height="75" autoplay loop>
+                        <source src="assets/options_animation.mp4" type="video/mp4">
+                    </video>
+                    <h2 class="third-row-options">Options</h2>
+                </div>
+                <div class="third-row-html-format-text-checkbox">
+                    <div class="third-row-htmlformat-pdfimage">
+                        <p class="third-row-html-format-text">Send HTML in format?</p>
+                        <div class="third-row-html-format-checkbox-pdf">
+                            <input type="checkbox" id="pdfCheckbox">
+                            <label for="pdfCheckbox"></label>
+                            <p>PDF</p>
+                        </div>
+                        <div class="third-row-html-format-checkbox-image">
+                            <input type="checkbox" id="imageCheckbox">
+                            <label for="imageCheckbox"></label>
+                            <p>Image</p>
+                        </div>
+                    </div>
+                    <div class="third-row-htmlformat-noyes">
+                        <p class="third-row-htmlformat-text">Send HTML in format?</p>
+                        <div class="third-row-htmlformat-checkbox-no">
+                            <input type="checkbox" id="noCheckbox">
+                            <label for="noCheckbox"></label>
+                            <p>No</p>
+                        </div>
+                        <div class="third-row-html-format-checkbox-yes">
+                            <input type="checkbox" id="yesCheckbox">
+                            <label for="yesCheckbox"></label>
+                            <p>Yes</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="third-row-main-second-inner">
+                <div class="third-row-video-options">
+                    <video width="75" height="75" autoplay loop>
+                        <source src="assets/smtp_animation.mp4" type="video/mp4">
+                    </video>
+                    <h2 class="third-row-options">SMTP Relay</h2>
+                </div>
+                <div class="third-row-html-format-text-checkbox">
+                    <div class="subject-text-field">
+                        <label for="smtpserver">SMTP Server: </label>
+                        <input type="text" id="smtpserver" name="smtpserver" placeholder="smtp-relay.brevo.com"
+                            required />
+                    </div>
+                    <div class="smtp-port-field">
+                        <label for="smtpport">Port: </label>
+                        <input type="text" id="smtpport" name="smtpport" placeholder="9001" required />
+                    </div>
+                    <div class="smtp-dropdown-selector">
+                        <p>TLS: </p>
+                        <div>
+                            <select id="tlsSelector" class="custom-select">
+                                <option value="none">None</option>
+                                <option value="tls">TLS 1.0</option>
+                                <option value="tls11">TLS 1.1</option>
+                                <option value="tls12">TLS 1.2</option>
+                                <option value="tls13">TLS 1.3</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="extra-row-main">
+            <div class="extra-row-buttons">
+                <button class="extra-row-button1">Submit Mail</button>
+                <button class="extra-row-button2">Logout</button>
+            </div>
+        </div>
+        <div class="fourth-row-main">
+            <table>
+                <thead>
+                    <tr>
+                        <th>S.No.</th>
+                        <th>Mail ID</th>
+                        <th>Sent To</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>18vsadb65dsfe654</td>
+                        <td>Sent</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>18vsadb65dsfe654</td>
+                        <td>Sent</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>18vsadb65dsfe654</td>
+                        <td>Sent</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="last-row">
+            <p>Blaze Mailer - Bulk Mail Sender | Product of VexaByte Team | Email Support: vexabyteofficial@gmail.com |
+                Telegram Support: Zolocrypto</p>
+        </div>
+    </div>
+
+
+    <script src="functions.js"></script>
+
+    <script>
+        function switchContent(contentId, button) {
+            document.querySelectorAll('.content').forEach(content => {
+                content.style.display = 'none';
+            });
+
+            document.getElementById(contentId).style.display = 'block';
+
+            document.querySelectorAll('.content-switcher-button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            button.classList.add('active');
+        }
+
+        function displayFileName(type, input) {
+            const fileInput = document.getElementById(type + 'FileInput');
+            const fileName = input.files[0].name;
+            fileInput.value = fileName;
+        }
+
+        function openFileUploader(type) {
+            const fileUploader = document.getElementById(type + 'FileUploader');
+            fileUploader.click();
+        }
+
+        const fileCheckbox = document.getElementById('credentialFileCheckbox');
+        const directoryCheckbox = document.getElementById('credentialDirectoryCheckbox');
+        const pdFCheckbox = document.getElementById('pdfCheckbox');
+        const imagECheckbox = document.getElementById('imageCheckbox');
+        const nOCheckbox = document.getElementById('noCheckbox');
+        const yeSCheckbox = document.getElementById('yesCheckbox');
+
+        fileCheckbox.addEventListener('change', function () {
+            if (fileCheckbox.checked) {
+                directoryCheckbox.checked = false;
+            }
+        });
+
+        directoryCheckbox.addEventListener('change', function () {
+            if (directoryCheckbox.checked) {
+                fileCheckbox.checked = false;
+            }
+        });
+
+        pdFCheckbox.addEventListener('change', function () {
+            if (pdFCheckbox.checked) {
+                imagECheckbox.checked = false;
+            }
+        });
+
+        imagECheckbox.addEventListener('change', function () {
+            if (imagECheckbox.checked) {
+                pdFCheckbox.checked = false;
+            }
+        });
+
+        nOCheckbox.addEventListener('change', function () {
+            if (nOCheckbox.checked) {
+                yeSCheckbox.checked = false;
+            }
+        });
+
+        yeSCheckbox.addEventListener('change', function () {
+            if (yeSCheckbox.checked) {
+                nOCheckbox.checked = false;
+            }
+        });
+    </script>
+
+</body>
+
+</html>

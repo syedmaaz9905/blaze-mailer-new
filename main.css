@@ -1,0 +1,919 @@
+body {
+    /* margin: 0; */
+    /* padding: 0; */
+}
+
+/* First Row Start */
+
+.first-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #323232;
+    padding: 1px;
+    border-radius: 0 0 12px 12px;
+}
+
+.first-row-heading {
+    color: #DFDFDF;
+}
+
+/* First Row End */
+
+/* Content Switcher Start */
+
+.content-switcher {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.content-switcher-button {
+    margin: 0 10px;
+    padding: 8px 16px;
+    cursor: pointer;
+    background-color: #323232;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    transition: 0.3s all ease-in-out;
+}
+
+.content-switcher-button:hover {
+    background-color: #06AB97;
+    transform: translateY(-5px);
+}
+
+.content-switcher-button.active {
+    background-color: #06AB97;
+}
+
+.content {
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+    margin-top: 15px;
+}
+
+#content1 {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Content Switcher End */
+
+/* Second Row Start */
+
+.second-row-main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+/* Second Row First Box Start */
+
+.second-row-first-box {
+    width: 100%;
+    border-radius: 8px;
+    padding: 10px;
+    background: #fffcff;
+    border: 2px solid #323232;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.3s all ease-in-out;
+}
+
+.second-row-first-box:hover {
+    border: 2px solid #06AB97;
+}
+
+.second-row-first-box-first-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.heading-uplaod-info {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+}
+
+.second-row-first-box-second-inner {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    padding: 8px;
+    background: rgb(242, 242, 242);
+}
+
+.upload-recipient-file-text {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+}
+
+.upload-recipient-file-button-getfile {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.upload-recipient-file-button {
+    background: #323232;
+    color: #fff;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s all ease-in-out;
+    width: 10%;
+}
+
+.upload-recipient-file-button:hover {
+    background: #06AB97;
+}
+
+.upload-recipient-file-getfile {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    outline: none;
+    transition: 0.3s all ease-in-out;
+    border: 1px solid #323232;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 80%;
+}
+
+.upload-recipient-file-getfile:hover {
+    border: 1px solid #06AB97;
+}
+
+.upload-html-file-text-checkbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.upload-html-file-text {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+}
+
+.upload-html-file-checkbox {
+    display: flex;
+    align-items: center;
+}
+
+.upload-html-file-checkbox input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 14px;
+    height: 14px;
+    border: 2px solid #323232;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-right: 8px;
+    transition: border-width 0.3s ease;
+}
+
+.upload-html-file-checkbox input[type="checkbox"]:checked {
+    border-width: 4px;
+    border-color: #06AB97;
+}
+
+.upload-html-file-checkbox p {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+}
+
+.upload-html-file-button-getfile {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.upload-html-file-button {
+    background: #323232;
+    color: #fff;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s all ease-in-out;
+    width: 10%;
+}
+
+.upload-html-file-button:hover {
+    background: #06AB97;
+}
+
+.upload-html-file-getfile {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    outline: none;
+    transition: 0.3s all ease-in-out;
+    border: 1px solid #323232;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 80%;
+}
+
+.upload-html-file-getfile:hover {
+    border: 1px solid #06AB97;
+}
+
+.upload-credential-text-checkbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.upload-credential-text {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+}
+
+.upload-credential-file-checkbox {
+    display: flex;
+    align-items: center;
+}
+
+.upload-credential-file-checkbox input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 14px;
+    height: 14px;
+    border: 2px solid #323232;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-right: 8px;
+    transition: border-width 0.3s ease;
+}
+
+.upload-credential-file-checkbox input[type="checkbox"]:checked {
+    border-width: 4px;
+    border-color: #06AB97;
+}
+
+.upload-credential-file-checkbox p {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+}
+
+.upload-credential-directory-checkbox {
+    display: flex;
+    align-items: center;
+}
+
+.upload-credential-directory-checkbox input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 14px;
+    height: 14px;
+    border: 2px solid #323232;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-right: 8px;
+    transition: border-width 0.3s ease;
+}
+
+.upload-credential-directory-checkbox input[type="checkbox"]:checked {
+    border-width: 4px;
+    border-color: #06AB97;
+}
+
+.upload-credential-directory-checkbox p {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+}
+
+.upload-credential-button-getfile {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.upload-credential-button {
+    background: #323232;
+    color: #fff;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s all ease-in-out;
+    width: 10%;
+}
+
+.upload-credential-button:hover {
+    background: #06AB97;
+}
+
+.upload-credential-getfile {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    outline: none;
+    transition: 0.3s all ease-in-out;
+    border: 1px solid #323232;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 80%;
+}
+
+.upload-credential-getfile:hover {
+    border: 1px solid #06AB97;
+}
+
+/* Second Row First Box End */
+
+/* Second Row Second Box Start */
+
+.second-row-second-box {
+    width: 100%;
+    border-radius: 8px;
+    padding: 10px;
+    background: #fffcff;
+    border: 2px solid #323232;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.3s all ease-in-out;
+}
+
+.second-row-second-box:hover {
+    border: 2px solid #06AB97;
+}
+
+.second-row-second-box-first-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.heading-description-info {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+}
+
+.second-row-second-box-second-inner {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    padding: 8px;
+    background: rgb(242, 242, 242);
+}
+
+.upload-description-info-checkbox {
+    display: flex;
+    align-items: center;
+}
+
+.upload-description-info-checkbox input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 14px;
+    height: 14px;
+    border: 2px solid #323232;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-right: 8px;
+    transition: border-width 0.3s ease;
+}
+
+.upload-description-info-checkbox input[type="checkbox"]:checked {
+    border-width: 4px;
+    border-color: #06AB97;
+}
+
+.upload-description-info-checkbox p {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+}
+
+.subject-name-text-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.subject-text-field {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.subject-text-field label {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.subject-text-field input {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    padding: 5px;
+    outline: none;
+    transition: 0.3s all ease-in-out;
+    border: 1px solid #323232;
+    border-radius: 4px;
+    width: 75%;
+}
+
+.subject-text-field input:hover,
+.subject-text-field input:focus {
+    border: 1px solid #06AB97;
+}
+
+.name-text-field {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.name-text-field label {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.name-text-field input {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    padding: 5px;
+    outline: none;
+    transition: 0.3s all ease-in-out;
+    border: 1px solid #323232;
+    border-radius: 4px;
+    width: 75%;
+}
+
+.name-text-field input:hover,
+.name-text-field input:focus {
+    border: 1px solid #06AB97;
+}
+
+.text-area-main {
+    display: flex;
+    flex-direction: column;
+}
+
+.text-area-main p {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+}
+
+.text-area {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    resize: none;
+    border-radius: 6px;
+    padding: 8px;
+    height: 70px;
+    outline: none;
+    cursor: pointer;
+    border: 1px solid #323232;
+    transition: 0.3s all ease-in-out;
+}
+
+.text-area:hover {
+    border: 1px solid #06AB97;
+}
+
+.text-area:focus {
+    cursor: text;
+    border: 1px solid #06AB97;
+}
+
+/* Second Row Second Box End */
+
+/* Second Row End */
+
+/* Third Row Start */
+
+.third-row-main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 15px;
+    justify-content: space-between;
+}
+
+.third-row-main-inner {
+    border-radius: 8px;
+    padding: 10px;
+    background: #fffcff;
+    border: 2px solid #323232;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.3s all ease-in-out;
+    width: 40%;
+}
+
+.third-row-main-second-inner {
+    border-radius: 8px;
+    padding: 10px;
+    background: #fffcff;
+    border: 2px solid #323232;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.3s all ease-in-out;
+    width: 50%;
+}
+
+.third-row-main-inner:hover {
+    border: 2px solid #06AB97;
+}
+
+.third-row-main-second-inner:hover {
+    border: 2px solid #06AB97;
+}
+
+.third-row-video-options {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+.third-row-options {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+}
+
+.third-row-html-format-text-checkbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    background: rgb(240, 240, 240);
+    border-radius: 8px;
+    padding: 6px;
+}
+
+.third-row-htmlformat-pdfimage {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.third-row-html-format-text {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+}
+
+.third-row-html-format-checkbox-pdf {
+    display: flex;
+    align-items: center;
+}
+
+.third-row-html-format-checkbox-pdf input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 14px;
+    height: 14px;
+    border: 2px solid #323232;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-right: 8px;
+    transition: border-width 0.3s ease;
+}
+
+.third-row-html-format-checkbox-pdf input[type="checkbox"]:checked {
+    border-width: 4px;
+    border-color: #06AB97;
+}
+
+.third-row-html-format-checkbox-pdf p {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+}
+
+.third-row-html-format-checkbox-image {
+    display: flex;
+    align-items: center;
+}
+
+.third-row-html-format-checkbox-image input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 14px;
+    height: 14px;
+    border: 2px solid #323232;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-right: 8px;
+    transition: border-width 0.3s ease;
+}
+
+.third-row-html-format-checkbox-image input[type="checkbox"]:checked {
+    border-width: 4px;
+    border-color: #06AB97;
+}
+
+.third-row-html-format-checkbox-image p {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+}
+
+.third-row-htmlformat-noyes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.third-row-htmlformat-text {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+}
+
+.third-row-htmlformat-checkbox-no {
+    display: flex;
+    align-items: center;
+}
+
+.third-row-htmlformat-checkbox-no input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 14px;
+    height: 14px;
+    border: 2px solid #323232;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-right: 8px;
+    transition: border-width 0.3s ease;
+}
+
+.third-row-htmlformat-checkbox-no input[type="checkbox"]:checked {
+    border-width: 4px;
+    border-color: #06AB97;
+}
+
+.third-row-htmlformat-checkbox-no p {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+}
+
+.third-row-html-format-checkbox-yes {
+    display: flex;
+    align-items: center;
+}
+
+.third-row-html-format-checkbox-yes input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 14px;
+    height: 14px;
+    border: 2px solid #323232;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-right: 8px;
+    transition: border-width 0.3s ease;
+}
+
+.third-row-html-format-checkbox-yes input[type="checkbox"]:checked {
+    border-width: 4px;
+    border-color: #06AB97;
+}
+
+.third-row-html-format-checkbox-yes p {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+}
+
+.third-row-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 30%;
+}
+
+.third-row-button1 {
+    padding: 15px;
+    background: #323232;
+    color: #fff;
+    transition: 0.3s all ease-in-out;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    border: none;
+}
+
+.third-row-button1:hover {
+    background: #06AB97;
+    transform: translateY(-5px);
+}
+
+.third-row-button2 {
+    padding: 15px;
+    background: #323232;
+    color: #fff;
+    transition: 0.3s all ease-in-out;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    border: none;
+}
+
+.third-row-button2:hover {
+    background: #06AB97;
+    transform: translateY(-5px);
+}
+
+.smtp-port-field {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.smtp-port-field label {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.smtp-port-field input {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    padding: 5px;
+    outline: none;
+    transition: 0.3s all ease-in-out;
+    border: 1px solid #323232;
+    border-radius: 4px;
+    width: 75%;
+}
+
+.smtp-port-field input:hover,
+.smtp-port-field input:focus {
+    border: 1px solid #06AB97;
+}
+
+.smtp-dropdown-selector {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.smtp-dropdown-selector p {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.custom-select {
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid #323232;
+    cursor: pointer;
+    width: 404px;
+    transition: 0.3s all ease-in-out;
+    font-family: "Montserrat", sans-serif;
+}
+
+.custom-select:hover{
+    border: 1px solid #06AB97;
+}
+
+.custom-select option {
+    font-family: "Montserrat", sans-serif;
+}
+
+
+/* Third Row End */
+
+/* Extra Row Start */
+
+.extra-row-main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.extra-row-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 30%;
+}
+
+.extra-row-button1 {
+    padding: 15px;
+    background: #323232;
+    color: #fff;
+    transition: 0.3s all ease-in-out;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    border: none;
+}
+
+.extra-row-button1:hover {
+    background: #06AB97;
+    transform: translateY(-5px);
+}
+
+.extra-row-button2 {
+    padding: 15px;
+    background: #323232;
+    color: #fff;
+    transition: 0.3s all ease-in-out;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    border: none;
+}
+
+.extra-row-button2:hover {
+    background: #06AB97;
+    transform: translateY(-5px);
+}
+
+/* Extra Row End */
+
+/* Fourth Row Start */
+
+.fourth-row-main {
+    margin-top: 12px;
+}
+
+.fourth-row-main table {
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+    border-collapse: collapse;
+    border-spacing: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+
+th {
+    background: #323232;
+    color: #fff;
+}
+
+th,
+td {
+    border: 1px solid #323232;
+    padding: 10px 15px;
+}
+
+tr:nth-child(even) {
+    background: #DFDFDF;
+}
+
+.last-row {
+    margin-top: 12px;
+    background: #323232;
+    padding: 1.5px;
+    color: #fff;
+    text-align: center;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.last-row p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+}
