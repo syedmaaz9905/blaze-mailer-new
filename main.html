@@ -11,6 +11,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <link rel="stylesheet" href="main.css" type="text/css">
 
     <title>Blaze Mailer</title>
@@ -19,7 +23,7 @@
 
 <body>
     <div class="first-row">
-        <h1 class="first-row-heading">Blaze Mailer</h1>
+        <h1 class="first-row-heading">Blaze Mailer Pro</h1>
     </div>
 
     <div class="content-switcher">
@@ -48,10 +52,28 @@
                             onchange="displayFileName('recipient', this)">
                     </div>
                     <div class="upload-html-file-text-checkbox">
-                        <p class="upload-html-file-text">Upload HTML File</p>
+                        <p class="upload-html-file-text">Upload Content</p>
                         <div class="upload-html-file-checkbox">
                             <input type="checkbox" id="directoryCheckbox">
                             <p>Directory?</p>
+                        </div>
+                    </div>
+                    <div class="chechboxes_upload_content">
+                        <div class="upload-html-content-checkbox">
+                            <input type="checkbox" id="htmlCheckbox">
+                            <p>HTML?</p>
+                        </div>
+                        <div class="upload-html-pdf-checkbox">
+                            <input type="checkbox" id="pdfCheckbox">
+                            <p>PDF?</p>
+                        </div>
+                        <div class="upload-html-imagePng-checkbox">
+                            <input type="checkbox" id="imagePngCheckbox">
+                            <p>Image (PNG)?</p>
+                        </div>
+                        <div class="upload-html-imageJpeg-checkbox">
+                            <input type="checkbox" id="imageJpegCheckbox">
+                            <p>Image (JPEG)?</p>
                         </div>
                     </div>
                     <div class="upload-html-file-button-getfile">
@@ -124,14 +146,19 @@
                     <div class="third-row-htmlformat-pdfimage">
                         <p class="third-row-html-format-text">Send HTML in format?</p>
                         <div class="third-row-html-format-checkbox-pdf">
-                            <input type="checkbox" id="pdfCheckbox">
-                            <label for="pdfCheckbox"></label>
+                            <input type="checkbox" id="pdffCheckbox">
+                            <label for="pdffCheckbox"></label>
                             <p>PDF</p>
                         </div>
                         <div class="third-row-html-format-checkbox-image">
-                            <input type="checkbox" id="imageCheckbox">
-                            <label for="imageCheckbox"></label>
-                            <p>Image</p>
+                            <input type="checkbox" id="imagePNGGCheckbox">
+                            <label for="imagePNGGCheckbox"></label>
+                            <p>Image(PNG)</p>
+                        </div>
+                        <div class="third-row-html-format-checkbox-image">
+                            <input type="checkbox" id="imageJPEGGCheckbox">
+                            <label for="imageJPEGGCheckbox"></label>
+                            <p>Image(JPEG)</p>
                         </div>
                     </div>
                     <div class="third-row-htmlformat-noyes">
@@ -150,8 +177,12 @@
                 </div>
             </div>
             <div class="third-row-buttons">
-                <button class="third-row-button1" onclick="shareData()">Submit Mail</button>
-                <button class="third-row-button2">Logout</button>
+                <button class="third-row-button1" onclick="shareData()"><i
+                        class="fa-regular fa-envelope envelope_icon"></i> Submit Mail</button>
+                <button class="third-row-button2"><i class="fa-regular fa-circle-stop stop_icon"></i> Stop Mail</button>
+                <button class="third-row-button3"><i class="fa-solid fa-right-from-bracket logout_icon"></i>
+                    Logout</button>
+                <button class="third-row-button4"><i class="fa-solid fa-question help_icon"></i> Help</button>
             </div>
         </div>
         <div class="fourth-row-main">
@@ -183,8 +214,10 @@
             </table>
         </div>
         <div class="last-row">
-            <p>Blaze Mailer - Bulk Mail Sender | Product of VexaByte Team | Email Support: vexabyteofficial@gmail.com |
-                Telegram Support: Zolocrypto</p>
+            <p>Blaze Mailer - Bulk Mail Sender | Product of VexaByte Team | Email Support:
+                <b>vexabyteofficial@gmail.com</b> |
+                Telegram Support: <b>Zolocrypto</b>
+            </p>
         </div>
     </div>
 
@@ -209,10 +242,28 @@
                             onchange="displayFileName('recipient', this)">
                     </div>
                     <div class="upload-html-file-text-checkbox">
-                        <p class="upload-html-file-text">Upload HTML File</p>
+                        <p class="upload-html-file-text">Upload Content</p>
                         <div class="upload-html-file-checkbox">
                             <input type="checkbox" id="directoryCheckbox">
                             <p>Directory?</p>
+                        </div>
+                    </div>
+                    <div class="chechboxes_upload_content">
+                        <div class="upload-html-content-checkbox">
+                            <input type="checkbox" id="htmlCheckbox">
+                            <p>HTML?</p>
+                        </div>
+                        <div class="upload-html-pdf-checkbox">
+                            <input type="checkbox" id="pdfCheckbox">
+                            <p>PDF?</p>
+                        </div>
+                        <div class="upload-html-imagePng-checkbox">
+                            <input type="checkbox" id="imagePngCheckbox">
+                            <p>Image (PNG)?</p>
+                        </div>
+                        <div class="upload-html-imageJpeg-checkbox">
+                            <input type="checkbox" id="imageJpegCheckbox">
+                            <p>Image (JPEG)?</p>
                         </div>
                     </div>
                     <div class="upload-html-file-button-getfile">
@@ -285,14 +336,19 @@
                     <div class="third-row-htmlformat-pdfimage">
                         <p class="third-row-html-format-text">Send HTML in format?</p>
                         <div class="third-row-html-format-checkbox-pdf">
-                            <input type="checkbox" id="pdfCheckbox">
-                            <label for="pdfCheckbox"></label>
+                            <input type="checkbox" id="pdffCheckbox">
+                            <label for="pdffCheckbox"></label>
                             <p>PDF</p>
                         </div>
                         <div class="third-row-html-format-checkbox-image">
-                            <input type="checkbox" id="imageCheckbox">
-                            <label for="imageCheckbox"></label>
-                            <p>Image</p>
+                            <input type="checkbox" id="imagePNGGCheckbox">
+                            <label for="imagePNGGCheckbox"></label>
+                            <p>Image(PNG)</p>
+                        </div>
+                        <div class="third-row-html-format-checkbox-image">
+                            <input type="checkbox" id="imageJPEGGCheckbox">
+                            <label for="imageJPEGGCheckbox"></label>
+                            <p>Image(JPEG)</p>
                         </div>
                     </div>
                     <div class="third-row-htmlformat-noyes">
@@ -344,8 +400,12 @@
         </div>
         <div class="extra-row-main">
             <div class="extra-row-buttons">
-                <button class="extra-row-button1">Submit Mail</button>
-                <button class="extra-row-button2">Logout</button>
+                <button class="extra-row-button1"><i class="fa-regular fa-envelope envelope_icon"></i> Submit
+                    Mail</button>
+                <button class="extra-row-button2"><i class="fa-regular fa-circle-stop stop_icon"></i> Stop Mail</button>
+                <button class="extra-row-button3"><i class="fa-solid fa-right-from-bracket logout_icon"></i>
+                    Logout</button>
+                <button class="extra-row-button4"><i class="fa-solid fa-question help_icon"></i> Help</button>
             </div>
         </div>
         <div class="fourth-row-main">
@@ -377,8 +437,10 @@
             </table>
         </div>
         <div class="last-row">
-            <p>Blaze Mailer - Bulk Mail Sender | Product of VexaByte Team | Email Support: vexabyteofficial@gmail.com |
-                Telegram Support: Zolocrypto</p>
+            <p>Blaze Mailer - Bulk Mail Sender | Product of VexaByte Team | Email Support:
+                <b>vexabyteofficial@gmail.com</b> |
+                Telegram Support: <b>Zolocrypto</b>
+            </p>
         </div>
     </div>
 
@@ -413,10 +475,45 @@
 
         const fileCheckbox = document.getElementById('credentialFileCheckbox');
         const directoryCheckbox = document.getElementById('credentialDirectoryCheckbox');
-        const pdFCheckbox = document.getElementById('pdfCheckbox');
-        const imagECheckbox = document.getElementById('imageCheckbox');
         const nOCheckbox = document.getElementById('noCheckbox');
         const yeSCheckbox = document.getElementById('yesCheckbox');
+
+        const htmlCheckbox = document.getElementById('htmlCheckbox');
+        const pdfCheckbox = document.getElementById('pdfCheckbox');
+        const imagePngCheckbox = document.getElementById('imagePngCheckbox');
+        const imageJpegCheckbox = document.getElementById('imageJpegCheckbox');
+
+        const pdfFormatCheckbox = document.getElementById('pdffCheckbox');
+        const imagePNGFormatCheckbox = document.getElementById('imagePNGGCheckbox');
+        const imageJPEGFormatCheckbox = document.getElementById('imageJPEGGCheckbox');
+
+        const formatCheckboxes = [pdfFormatCheckbox, imagePNGFormatCheckbox, imageJPEGFormatCheckbox];
+
+        const checkboxes = [htmlCheckbox, pdfCheckbox, imagePngCheckbox, imageJpegCheckbox];
+
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', function () {
+                if (this.checked) {
+                    checkboxes.forEach(otherCheckbox => {
+                        if (otherCheckbox !== this) {
+                            otherCheckbox.checked = false;
+                        }
+                    });
+                }
+            });
+        });
+
+        formatCheckboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', function () {
+                if (this.checked) {
+                    formatCheckboxes.forEach(otherCheckbox => {
+                        if (otherCheckbox !== this) {
+                            otherCheckbox.checked = false;
+                        }
+                    });
+                }
+            });
+        });
 
         fileCheckbox.addEventListener('change', function () {
             if (fileCheckbox.checked) {
