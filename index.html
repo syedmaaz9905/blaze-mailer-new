@@ -59,7 +59,7 @@
             </div>
         </div>
 
-        <a class="login_button" type="button" onclick="validateLogin()">Login</a>
+        <a id="login_button" class="login_button" type="button" onclick="validateLogin()">Login</a>
 
         <p id="error-message" class="error-message"></p>
     </div>
@@ -73,19 +73,25 @@
         function validateLogin() {
             var username = document.getElementById("username").value;
             var password = document.getElementById("password").value;
-
-            var hardcodedUsername = "asd";
-            var hardcodedPassword = "asd";
-
+        
             var errorMessageElement = document.getElementById("error-message");
             errorMessageElement.innerHTML = "";
-
+        
             if (username === "" || password === "") {
                 errorMessageElement.innerHTML = 'Both fields are required.';
-            } else if (username !== hardcodedUsername || password !== hardcodedPassword) {
-                errorMessageElement.innerHTML = 'Incorrect username or password.';
             } else {
-                window.location.href = "main.html";
+                // Send login data to main process for verification
+                window.api.invoke('myfunc', { username, password })
+                    .then(function (res) {
+                        if (res.success) {
+                            window.location.href = "main.html";
+                        } else {
+                            errorMessageElement.innerHTML = 'Incorrect username or password.';
+                        }
+                    })
+                    .catch(function (err) {
+                        console.error(err);
+                    });
             }
         }
 
