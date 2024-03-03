@@ -1,19 +1,55 @@
+:root {
+    --primary-header-color: rgb(243, 243, 243);
+    --secondary-header-color: #323232;
 
+    --background-color: #fff;
+
+    --button-color: #323232;
+
+    --table-body-color: #dfdfdf;
+}
+
+.dark-theme {
+    --primary-header-color: #323232;
+    --secondary-header-color: rgb(243, 243, 243);
+
+    --background-color: #323232;
+
+    --button-color: #c2c2c2;
+
+    --table-body-color: #3f3f3f;
+}
+
+body {
+    background: var(--background-color);
+}
 
 /* First Row Start */
 
 .first-row {
     display: flex;
     align-items: center;
-    justify-content: center;
-    background: #323232;
+    justify-content: space-around;
+    /* background: #323232; */
+    background: var(--secondary-header-color);
     padding: 1px;
     border-radius: 0 0 12px 12px;
 }
 
 .first-row-heading {
-    color: #DFDFDF;
+    color: var(--primary-header-color);
     letter-spacing: 0.8px;
+}
+
+.telegram_header {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    color: var(--primary-header-color);
+}
+
+.dark_light_icon {
+    width: 30px;
+    cursor: pointer;
 }
 
 /* First Row End */
@@ -30,8 +66,8 @@
     margin: 0 10px;
     padding: 8px 16px;
     cursor: pointer;
-    background-color: #323232;
-    color: #fff;
+    background-color: var(--secondary-header-color);
+    color: var(--primary-header-color);
     border: none;
     border-radius: 4px;
     transition: 0.3s all ease-in-out;
@@ -84,7 +120,7 @@
     border-radius: 8px;
     padding: 10px;
     background: #fffcff;
-    border: 2px solid #323232;
+    border: 2px solid var(--secondary-header-color);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -127,8 +163,8 @@
 }
 
 .upload-recipient-file-button {
-    background: #323232;
-    color: #fff;
+    background: var(--button-color);
+    color: var(--primary-header-color);
     padding: 8px;
     border-radius: 8px;
     cursor: pointer;
@@ -202,8 +238,8 @@
 }
 
 .upload-html-file-button {
-    background: #323232;
-    color: #fff;
+    background: var(--button-color);
+    color: var(--primary-header-color);
     padding: 8px;
     border-radius: 8px;
     cursor: pointer;
@@ -306,8 +342,8 @@
 }
 
 .upload-credential-button {
-    background: #323232;
-    color: #fff;
+    background: var(--button-color);
+    color: var(--primary-header-color);
     padding: 8px;
     border-radius: 8px;
     cursor: pointer;
@@ -343,7 +379,7 @@
     border-radius: 8px;
     padding: 10px;
     background: #fffcff;
-    border: 2px solid #323232;
+    border: 2px solid var(--secondary-header-color);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -717,8 +753,8 @@
 
 .third-row-button1 {
     padding: 15px;
-    background: #323232;
-    color: #fff;
+    background: var(--secondary-header-color);
+    color: var(--primary-header-color);
     transition: 0.3s all ease-in-out;
     border-radius: 6px;
     cursor: pointer;
@@ -741,8 +777,8 @@
 
 .third-row-button2 {
     padding: 15px;
-    background: #323232;
-    color: #fff;
+    background: var(--secondary-header-color);
+    color: var(--primary-header-color);
     transition: 0.3s all ease-in-out;
     border-radius: 6px;
     cursor: pointer;
@@ -765,8 +801,8 @@
 
 .third-row-button3 {
     padding: 15px;
-    background: #323232;
-    color: #fff;
+    background: var(--secondary-header-color);
+    color: var(--primary-header-color);
     transition: 0.3s all ease-in-out;
     border-radius: 6px;
     cursor: pointer;
@@ -789,8 +825,8 @@
 
 .third-row-button4 {
     padding: 15px;
-    background: #323232;
-    color: #fff;
+    background: var(--secondary-header-color);
+    color: var(--primary-header-color);
     transition: 0.3s all ease-in-out;
     border-radius: 6px;
     cursor: pointer;
@@ -897,8 +933,8 @@
 
 .extra-row-button1 {
     padding: 15px;
-    background: #323232;
-    color: #fff;
+    background: var(--secondary-header-color);
+    color: var(--primary-header-color);
     transition: 0.3s all ease-in-out;
     border-radius: 6px;
     cursor: pointer;
@@ -917,8 +953,8 @@
 
 .extra-row-button2 {
     padding: 15px;
-    background: #323232;
-    color: #fff;
+    background: var(--secondary-header-color);
+    color: var(--primary-header-color);
     transition: 0.3s all ease-in-out;
     border-radius: 6px;
     cursor: pointer;
@@ -937,8 +973,8 @@
 
 .extra-row-button3 {
     padding: 15px;
-    background: #323232;
-    color: #fff;
+    background: var(--secondary-header-color);
+    color: var(--primary-header-color);
     transition: 0.3s all ease-in-out;
     border-radius: 6px;
     cursor: pointer;
@@ -957,8 +993,8 @@
 
 .extra-row-button4 {
     padding: 15px;
-    background: #323232;
-    color: #fff;
+    background: var(--secondary-header-color);
+    color: var(--primary-header-color);
     transition: 0.3s all ease-in-out;
     border-radius: 6px;
     cursor: pointer;
@@ -988,31 +1024,42 @@
     text-align: center;
     padding: 12px;
     border-collapse: collapse;
-    border-spacing: 0;
+    /* border-spacing: 0; */
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
 }
 
+.scrollable-table{
+    height: 200px;
+    overflow-y: auto;
+}
+
 th {
-    background: #323232;
-    color: #fff;
+    background: var(--secondary-header-color);
+    color: var(--primary-header-color);
+    position: sticky;
+    top: 0;
 }
 
 th,
 td {
-    border: 1px solid #323232;
+    border: 1px solid var(--secondary-header-color);
     padding: 10px 15px;
 }
 
+tbody {
+    color: var(--secondary-header-color);
+}
+
 tr:nth-child(even) {
-    background: #DFDFDF;
+    background: var(--table-body-color);
 }
 
 .last-row {
     margin-top: 12px;
-    background: #323232;
     padding: 1.5px;
-    color: #fff;
+    background: var(--secondary-header-color);
+    color: var(--primary-header-color);
     text-align: center;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
@@ -1024,7 +1071,7 @@ tr:nth-child(even) {
     font-size: 15px;
 }
 
-.chechboxes_upload_content{
+.chechboxes_upload_content {
     display: flex;
     flex-direction: row;
     justify-content: space-between;

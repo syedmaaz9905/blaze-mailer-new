@@ -17,13 +17,21 @@
 
     <link rel="stylesheet" href="main.css" type="text/css">
 
-    <title>Blaze Mailer</title>
+    <title>JetStream Mailer</title>
 
 </head>
 
 <body>
     <div class="first-row">
-        <h1 class="first-row-heading">Blaze Mailer Pro</h1>
+        <div>
+            <p class="telegram_header">Telegram Id:<br />Zolocrypto</p>
+        </div>
+        <div>
+            <h1 class="first-row-heading">JetStream Mailer</h1>
+        </div>
+        <div class="dark_light_icon_main">
+            <img src="./assets/moon_light.png" class="dark_light_icon" id="darkMode_lightMode" />
+        </div>
     </div>
 
     <div class="content-switcher">
@@ -186,32 +194,54 @@
             </div>
         </div>
         <div class="fourth-row-main">
-            <table>
-                <thead>
-                    <tr>
-                        <th>S.No.</th>
-                        <th>Mail ID</th>
-                        <th>Sent To</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>18vsadb65dsfe654</td>
-                        <td>Sent</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>18vsadb65dsfe654</td>
-                        <td>Sent</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>18vsadb65dsfe654</td>
-                        <td>Sent</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="scrollable-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>S.No.</th>
+                            <th>Mail ID</th>
+                            <th>Sent To</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>18vsadb65dsfe654</td>
+                            <td>Sent</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>18vsadb65dsfe654</td>
+                            <td>Sent</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>18vsadb65dsfe654</td>
+                            <td>Sent</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>18vsadb65dsfe654</td>
+                            <td>Sent</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>18vsadb65dsfe654</td>
+                            <td>Sent</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>18vsadb65dsfe654</td>
+                            <td>Sent</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>18vsadb65dsfe654</td>
+                            <td>Sent</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
         <div class="last-row">
             <p>Blaze Mailer - Bulk Mail Sender | Product of VexaByte Team | Email Support:
@@ -409,32 +439,54 @@
             </div>
         </div>
         <div class="fourth-row-main">
-            <table>
-                <thead>
-                    <tr>
-                        <th>S.No.</th>
-                        <th>Mail ID</th>
-                        <th>Sent To</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>18vsadb65dsfe654</td>
-                        <td>Sent</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>18vsadb65dsfe654</td>
-                        <td>Sent</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>18vsadb65dsfe654</td>
-                        <td>Sent</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="scrollable-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>S.No.</th>
+                            <th>Mail ID</th>
+                            <th>Sent To</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>18vsadb65dsfe654</td>
+                            <td>Sent</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>18vsadb65dsfe654</td>
+                            <td>Sent</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>18vsadb65dsfe654</td>
+                            <td>Sent</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>18vsadb65dsfe654</td>
+                            <td>Sent</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>18vsadb65dsfe654</td>
+                            <td>Sent</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>18vsadb65dsfe654</td>
+                            <td>Sent</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>18vsadb65dsfe654</td>
+                            <td>Sent</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
         <div class="last-row">
             <p>Blaze Mailer - Bulk Mail Sender | Product of VexaByte Team | Email Support:
@@ -448,6 +500,16 @@
     <script src="functions.js"></script>
 
     <script>
+        var icon = document.getElementById("darkMode_lightMode")
+        icon.onclick = function () {
+            document.body.classList.toggle("dark-theme")
+            if (document.body.classList.contains("dark-theme")) {
+                icon.src = "./assets/sun_dark.png"
+            } else {
+                icon.src = "./assets/moon_light.png"
+            }
+        }
+
         function switchContent(contentId, button) {
             document.querySelectorAll('.content').forEach(content => {
                 content.style.display = 'none';
