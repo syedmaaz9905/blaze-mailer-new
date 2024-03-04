@@ -59,6 +59,7 @@
                         <input type="file" id="recipientFileUploader" style="display: none;"
                             onchange="displayFileName('recipient', this)">
                     </div>
+
                     <div class="upload-html-file-text-checkbox">
                         <p class="upload-html-file-text">Upload Content</p>
                         <div class="upload-html-file-checkbox">
@@ -121,24 +122,48 @@
                     <h2 class="heading-description-info">Description Info</h2>
                 </div>
                 <div class="second-row-second-box-second-inner">
+
                     <div class="upload-description-info-checkbox">
                         <input type="checkbox" id="descriptionInfoDirectoryCheckbox">
                         <p>Directory?</p>
                     </div>
+                    
                     <div class="subject-name-text-fields">
-                        <div class="subject-text-field">
-                            <label for="subject">Subject: </label>
-                            <input type="text" id="subject" name="subject" placeholder="Affirmation" required />
+
+                        <div>
+                            <div class="subject-text-field">
+                                <label for="subject">Subject: </label>
+                                <input type="text" id="subject" name="subject" placeholder="Affirmation" required />
+                            </div>
+
+                            <div class="subject_upload_button">
+                                <button class="upload-subject-button">Upload</button>
+                            </div>
                         </div>
-                        <div class="name-text-field">
-                            <label for="name">Name(Spoof): </label>
-                            <input type="text" id="name" name="name" placeholder="Affirmation" required />
+
+
+                        <div>
+                            <div class="name-text-field">
+                                <label for="name">Name(Spoof): </label>
+                                <input type="text" id="name" name="name" placeholder="Affirmation" required />
+                            </div>
+
+
+                            <div class="nameSpoof_upload_button">
+                                <button class="upload-nameSpoof-button">Upload</button>
+                            </div>
                         </div>
+
                     </div>
+
                     <div class="text-area-main">
-                        <p>Mail Description:</p>
+                        <div class="mail_description_and_uploadButton">
+                            <p>Mail Description:</p>
+                            <button class="upload-mailDescription-button">Upload</button>
+                        </div>
                         <textarea class="text-area" placeholder="Write message here..."></textarea>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -526,8 +551,8 @@
 
         function displayFileName(type, input) {
             const fileInput = document.getElementById(type + 'FileInput');
-            const fileName = input.files[0].name;
-            fileInput.value = fileName;
+            const filePath = input.files[0].path;
+            fileInput.value = filePath;
         }
 
         function openFileUploader(type) {
@@ -612,6 +637,9 @@
                 nOCheckbox.checked = false;
             }
         });
+
+
+        
     </script>
 
 </body>
