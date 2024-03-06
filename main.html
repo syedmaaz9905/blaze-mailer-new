@@ -127,7 +127,7 @@
                         <input type="checkbox" id="descriptionInfoDirectoryCheckbox">
                         <p>Directory?</p>
                     </div>
-                    
+
                     <div class="subject-name-text-fields">
 
                         <div>
@@ -136,8 +136,16 @@
                                 <input type="text" id="subject" name="subject" placeholder="Affirmation" required />
                             </div>
 
-                            <div class="subject_upload_button">
-                                <button class="upload-subject-button">Upload</button>
+                            <div class="subject_upload_button" style="display: none;">
+                                <div>
+                                    <label for="subjectFileInput" class="upload-subject-button">Upload</label>
+                                </div>
+                                <div class="subject_input_getFile">
+                                    <input type="text" id="subjectFileInput" class="upload-subject-getfile"
+                                        placeholder="No File Chosen" readonly onclick="openFileUploader('subject')">
+                                    <input type="file" id="subjectFileUploader" style="display: none;"
+                                        onchange="displayFileName('subject', this)">
+                                </div>
                             </div>
                         </div>
 
@@ -148,9 +156,16 @@
                                 <input type="text" id="name" name="name" placeholder="Affirmation" required />
                             </div>
 
-
-                            <div class="nameSpoof_upload_button">
-                                <button class="upload-nameSpoof-button">Upload</button>
+                            <div class="nameSpoof_upload_button" style="display: none;">
+                                <div>
+                                    <label for="nameFileInput" class="upload-name-button">Upload</label>
+                                </div>
+                                <div class="name_input_getFile">
+                                    <input type="text" id="nameFileInput" class="upload-name-getfile"
+                                        placeholder="No File Chosen" readonly onclick="openFileUploader('name')">
+                                    <input type="file" id="nameFileUploader" style="display: none;"
+                                        onchange="displayFileName('name', this)">
+                                </div>
                             </div>
                         </div>
 
@@ -159,7 +174,18 @@
                     <div class="text-area-main">
                         <div class="mail_description_and_uploadButton">
                             <p>Mail Description:</p>
-                            <button class="upload-mailDescription-button">Upload</button>
+
+                            <div class="mailDescription_upload_button" style="display: none;">
+                                <div>
+                                    <label for="mailFileInput" class="upload-mail-button">Upload</label>
+                                </div>
+                                <div class="mail_input_getFile">
+                                    <input type="text" id="mailFileInput" class="upload-mail-getfile"
+                                        placeholder="No File Chosen" readonly onclick="openFileUploader('mail')">
+                                    <input type="file" id="mailFileUploader" style="display: none;"
+                                        onchange="displayFileName('mail', this)">
+                                </div>
+                            </div>
                         </div>
                         <textarea class="text-area" placeholder="Write message here..."></textarea>
                     </div>
@@ -578,6 +604,21 @@
 
         const checkboxes = [htmlCheckbox, pdfCheckbox, imagePngCheckbox, imageJpegCheckbox];
 
+        const checkboxDirectorySubjectNameMailDescription = document.getElementById('descriptionInfoDirectoryCheckbox');
+        const uploadButtonContainers = document.querySelectorAll('.subject_upload_button, .nameSpoof_upload_button, .mailDescription_upload_button');
+
+        checkboxDirectorySubjectNameMailDescription.addEventListener('change', () => {
+            const isDirectoryChecked = checkboxDirectorySubjectNameMailDescription.checked;
+
+            uploadButtonContainers.forEach(container => {
+                container.style.display = isDirectoryChecked ? 'flex' : 'none';
+                if (container.classList.contains('subject_upload_button')) {
+                    const uploadButton = container.querySelector('.upload-subject-button');
+                    uploadButton.disabled = !isDirectoryChecked;
+                }
+            });
+        });
+
         checkboxes.forEach(checkbox => {
             checkbox.addEventListener('change', function () {
                 if (this.checked) {
@@ -638,8 +679,6 @@
             }
         });
 
-
-        
     </script>
 
 </body>

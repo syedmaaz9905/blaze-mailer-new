@@ -1196,6 +1196,29 @@ tr:nth-child(even) {
 
 .subject_upload_button {
     margin-top: 12px;
+    margin-bottom: 3px;
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    align-items: center;
+}
+
+.nameSpoof_upload_button {
+    margin-top: 12px;
+    margin-bottom: 3px;
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    align-items: center;
+}
+
+.mailDescription_upload_button {
+    margin-top: 12px;
+    margin-bottom: 3px;
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    align-items: center;
 }
 
 .upload-subject-button {
@@ -1207,14 +1230,49 @@ tr:nth-child(even) {
     transition: 0.3s all ease-in-out;
     width: 15%;
     border: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 13px;
 }
 
 .upload-subject-button:hover {
     background: #06AB97;
 }
 
-.nameSpoof_upload_button {
-    margin-top: 12px;
+.upload-name-button {
+    background: var(--button-color);
+    color: var(--primary-header-color);
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s all ease-in-out;
+    width: 15%;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+}
+
+.upload-name-button:hover {
+    background: #06AB97;
+}
+
+.upload-mail-button {
+    background: var(--button-color);
+    color: var(--primary-header-color);
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s all ease-in-out;
+    width: 15%;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+}
+
+.upload-mail-button:hover {
+    background: #06AB97;
 }
 
 .upload-nameSpoof-button {
@@ -1252,4 +1310,64 @@ tr:nth-child(even) {
 
 .upload-mailDescription-button:hover {
     background: #06AB97;
+}
+
+.subject_input_getFile {
+    width: 100%;
+}
+
+.name_input_getFile {
+    width: 100%;
+}
+
+.mail_input_getFile {
+    width: 100%;
+}
+
+.upload-subject-getfile {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    outline: none;
+    transition: 0.3s all ease-in-out;
+    border: 1px solid #323232;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 99%;
+    height: 25px;
+}
+
+.upload-subject-getfile:hover {
+    border: 1px solid #06AB97;
+}
+
+.upload-name-getfile {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    outline: none;
+    transition: 0.3s all ease-in-out;
+    border: 1px solid #323232;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 99%;
+    height: 25px;
+}
+
+.upload-name-getfile:hover {
+    border: 1px solid #06AB97;
+}
+
+.upload-mail-getfile {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    outline: none;
+    transition: 0.3s all ease-in-out;
+    border: 1px solid #323232;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 99%;
+    height: 25px;
+}
+
+.upload-mail-getfile:hover {
+    border: 1px solid #06AB97;
 }
