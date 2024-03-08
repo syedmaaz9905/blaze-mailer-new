@@ -1213,7 +1213,7 @@ tr:nth-child(even) {
 }
 
 .mailDescription_upload_button {
-    margin-top: 12px;
+    margin-top: 3px;
     margin-bottom: 3px;
     display: flex;
     flex-direction: row;

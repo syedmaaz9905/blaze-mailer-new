@@ -133,7 +133,8 @@
                         <div>
                             <div class="subject-text-field">
                                 <label for="subject">Subject: </label>
-                                <input type="text" id="subject" name="subject" placeholder="Affirmation" required />
+                                <input type="text" id="subjectFieldContent1" name="subject" placeholder="Affirmation"
+                                    required />
                             </div>
 
                             <div class="subject_upload_button" style="display: none;">
@@ -142,9 +143,10 @@
                                 </div>
                                 <div class="subject_input_getFile">
                                     <input type="text" id="subjectFileInput" class="upload-subject-getfile"
-                                        placeholder="No File Chosen" readonly onclick="openFileUploader('subject')">
-                                    <input type="file" id="subjectFileUploader" style="display: none;"
-                                        onchange="displayFileName('subject', this)">
+                                        placeholder="No Directory Chosen" readonly
+                                        onclick="openDirectoryUploader('subject')">
+                                    <input type="file" id="subjectDirectoryUploader" style="display: none;"
+                                        webkitdirectory onchange="displayDirectoryName('subject', this)">
                                 </div>
                             </div>
                         </div>
@@ -153,7 +155,8 @@
                         <div>
                             <div class="name-text-field">
                                 <label for="name">Name(Spoof): </label>
-                                <input type="text" id="name" name="name" placeholder="Affirmation" required />
+                                <input type="text" id="nameFieldContent1" name="name" placeholder="Affirmation"
+                                    required />
                             </div>
 
                             <div class="nameSpoof_upload_button" style="display: none;">
@@ -162,9 +165,10 @@
                                 </div>
                                 <div class="name_input_getFile">
                                     <input type="text" id="nameFileInput" class="upload-name-getfile"
-                                        placeholder="No File Chosen" readonly onclick="openFileUploader('name')">
-                                    <input type="file" id="nameFileUploader" style="display: none;"
-                                        onchange="displayFileName('name', this)">
+                                        placeholder="No Directory Chosen" readonly
+                                        onclick="openDirectoryUploader('name')">
+                                    <input type="file" id="nameDirectoryUploader" style="display: none;" webkitdirectory
+                                        onchange="displayDirectoryName('name', this)">
                                 </div>
                             </div>
                         </div>
@@ -175,19 +179,21 @@
                         <div class="mail_description_and_uploadButton">
                             <p>Mail Description:</p>
 
-                            <div class="mailDescription_upload_button" style="display: none;">
-                                <div>
-                                    <label for="mailFileInput" class="upload-mail-button">Upload</label>
-                                </div>
-                                <div class="mail_input_getFile">
-                                    <input type="text" id="mailFileInput" class="upload-mail-getfile"
-                                        placeholder="No File Chosen" readonly onclick="openFileUploader('mail')">
-                                    <input type="file" id="mailFileUploader" style="display: none;"
-                                        onchange="displayFileName('mail', this)">
-                                </div>
-                            </div>
                         </div>
-                        <textarea class="text-area" placeholder="Write message here..."></textarea>
+                        <div class="mailDescription_upload_button" style="display: none;">
+                            <div>
+                                <label for="mailFileInput" class="upload-mail-button">Upload</label>
+                            </div>
+                            <div class="mail_input_getFile">
+                                <input type="text" id="mailFileInput" class="upload-mail-getfile"
+                                    placeholder="No Directory Chosen" readonly onclick="openDirectoryUploader('mail')">
+                                <input type="file" id="mailDirectoryUploader" style="display: none;" webkitdirectory
+                                    onchange="displayDirectoryName('mail', this)">
+                            </div>
+
+                        </div>
+                        <textarea class="text-area" id="textAreaFieldContent1"
+                            placeholder="Write message here..."></textarea>
                     </div>
 
                 </div>
@@ -586,6 +592,39 @@
             fileUploader.click();
         }
 
+
+
+
+
+
+
+        function displayDirectoryName(type, input) {
+            const directoryInput = document.getElementById(type + 'FileInput');
+
+            // Check if any files are selected
+            if (input.files.length > 0) {
+                const directoryPath = input.files[0].path;
+
+                // Extract the first directory in the path
+                const topLevelDirectory = directoryPath.split('\\')[2];
+                const directoryOnlyPath = directoryPath.substring(0, directoryPath.indexOf(topLevelDirectory) + topLevelDirectory.length);
+
+                directoryInput.value = directoryOnlyPath;
+            } else {
+                directoryInput.value = "";
+            }
+        }
+
+        function openDirectoryUploader(type) {
+            const directoryUploader = document.getElementById(type + 'DirectoryUploader');
+            directoryUploader.click();
+        }
+
+
+
+
+
+
         const fileCheckbox = document.getElementById('credentialFileCheckbox');
         const directoryCheckbox = document.getElementById('credentialDirectoryCheckbox');
         const nOCheckbox = document.getElementById('noCheckbox');
@@ -604,8 +643,15 @@
 
         const checkboxes = [htmlCheckbox, pdfCheckbox, imagePngCheckbox, imageJpegCheckbox];
 
+
+
+
+
         const checkboxDirectorySubjectNameMailDescription = document.getElementById('descriptionInfoDirectoryCheckbox');
         const uploadButtonContainers = document.querySelectorAll('.subject_upload_button, .nameSpoof_upload_button, .mailDescription_upload_button');
+        const subjectInput = document.getElementById('subjectFieldContent1');
+        const nameInput = document.getElementById('nameFieldContent1');
+        const textareaInput = document.getElementById('textAreaFieldContent1');
 
         checkboxDirectorySubjectNameMailDescription.addEventListener('change', () => {
             const isDirectoryChecked = checkboxDirectorySubjectNameMailDescription.checked;
@@ -617,7 +663,19 @@
                     uploadButton.disabled = !isDirectoryChecked;
                 }
             });
+
+            // Hide subject, name, and textarea inputs when checkbox is checked
+            subjectInput.style.display = isDirectoryChecked ? 'none' : 'block';
+            nameInput.style.display = isDirectoryChecked ? 'none' : 'block';
+            textareaInput.style.display = isDirectoryChecked ? 'none' : 'block';
         });
+
+
+
+
+
+
+
 
         checkboxes.forEach(checkbox => {
             checkbox.addEventListener('change', function () {
