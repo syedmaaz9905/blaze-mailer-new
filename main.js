@@ -66,3 +66,19 @@ ipcMain.handle('myfunc', async (event, arg) => {
         return { success: false, message: "Incorrect username or password." };
     }
 });
+
+ipcMain.handle('shareData', async (event, data) => {
+    return new Promise((resolve, reject) => {
+        try {
+            // Implement shareData logic here
+            // ...
+
+            // For demonstration purposes, let's just log the data
+            console.log('Data shared:', data);
+
+            resolve({ success: true, message: "Data shared successfully!" });
+        } catch (error) {
+            reject(error);
+        }
+    });
+});

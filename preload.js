@@ -23,15 +23,12 @@ window.addEventListener('DOMContentLoaded', () => {
  * in the electron window? your frontend js will be able
  * to access this stuff as a result.
  */
-contextBridge.exposeInMainWorld(
+ contextBridge.exposeInMainWorld(
     "api", {
     invoke: (channel, data) => {
-        let validChannels = ["myfunc"]; // list of ipcMain.handle channels you want access in frontend to
+        let validChannels = ["shareData", "myfunc"]; // Add your new channels here
         if (validChannels.includes(channel)) {
-            // ipcRenderer.invoke accesses ipcMain.handle channels like 'myfunc'
-            // make sure to include this return statement or you won't get your Promise back
             return ipcRenderer.invoke(channel, data);
         }
     },
-}
-);
+});

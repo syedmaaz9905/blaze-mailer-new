@@ -22,25 +22,40 @@
 </head>
 
 <body>
+
+
+    <!-- First Row -->
     <div class="first-row">
+
         <div>
             <p class="telegram_header">Telegram Id:<br />Zolocrypto</p>
         </div>
+
         <div>
             <h1 class="first-row-heading">JetStream Mailer</h1>
         </div>
+
         <div class="dark_light_icon_main">
             <img src="./assets/moon_light.png" class="dark_light_icon" id="darkMode_lightMode" />
         </div>
+
     </div>
+
 
     <div class="content-switcher">
+
         <button class="content-switcher-button active" onclick="switchContent('content1', this)">Content 1</button>
+
         <button class="content-switcher-button" onclick="switchContent('content2', this)">Content 2</button>
+
     </div>
 
+
     <div class="content" id="content1">
+
+        <!-- Second Row -->
         <div class="second-row-main">
+
             <div class="second-row-first-box">
 
                 <div class="second-row-first-box-first-inner">
@@ -60,13 +75,18 @@
                             onchange="displayFileName('recipient', this)">
                     </div>
 
+
                     <div class="upload-html-file-text-checkbox">
+
                         <p class="upload-html-file-text">Upload Content</p>
+
                         <div class="upload-html-file-checkbox">
                             <input type="checkbox" id="directoryCheckbox">
                             <p>Directory?</p>
                         </div>
+
                     </div>
+
                     <div class="chechboxes_upload_content">
                         <div class="upload-html-content-checkbox">
                             <input type="checkbox" id="htmlCheckbox">
@@ -85,6 +105,7 @@
                             <p>Image (JPEG)?</p>
                         </div>
                     </div>
+
                     <div class="upload-html-file-button-getfile">
                         <input type="text" id="htmlFileInput" class="upload-html-file-getfile"
                             placeholder="No File Chosen" readonly onclick="openFileUploader('html')">
@@ -92,19 +113,48 @@
                         <input type="file" id="htmlFileUploader" style="display: none;"
                             onchange="displayFileName('html', this)">
                     </div>
+
+                    <div class="contentDirectory_upload_button" style="display: none;">
+
+                        <div class="subject_input_getFile">
+                            <input type="text" id="subjectFileInput" class="upload-contentDirectory-getfile"
+                                placeholder="No Directory Chosen" readonly onclick="openDirectoryUploader('subject')">
+                            <input type="file" id="subjectDirectoryUploader" style="display: none;" webkitdirectory
+                                onchange="displayDirectoryName('subject', this)">
+                        </div>
+
+                        <div>
+                            <label for="subjectFileInput" class="upload-subject-button">Upload</label>
+                        </div>
+
+                    </div>
+
+
+
+
+
+
+
+
                     <div class="upload-credential-text-checkbox">
+
+
                         <p class="upload-credential-text">Upload Credential</p>
+
                         <div class="upload-credential-file-checkbox">
-                            <input type="checkbox" id="credentialFileCheckbox">
+                            <input type="checkbox" id="credentialFileCheckbox" checked>
                             <label for="credentialFileCheckbox"></label>
                             <p>File?</p>
                         </div>
+
                         <div class="upload-credential-directory-checkbox">
-                            <input type="checkbox" id="credentialDirectoryCheckbox">
-                            <label for="credentialDirectoryCheckbox"></label>
+                            <input type="checkbox" id="credentialDirectoryCheckboxContent">
+                            <label for="credentialDirectoryCheckboxContent"></label>
                             <p>Directory?</p>
                         </div>
+
                     </div>
+
                     <div class="upload-credential-button-getfile">
                         <input type="text" id="credentialFileInput" class="upload-credential-getfile"
                             placeholder="No File Chosen" readonly onclick="openFileUploader('credential')">
@@ -112,8 +162,25 @@
                         <input type="file" id="credentialFileUploader" style="display: none;"
                             onchange="displayFileName('credential', this)">
                     </div>
+
+                    <div class="credentialDirectory_upload_button" style="display: none;">
+
+                        <div class="subject_input_getFile">
+                            <input type="text" id="credentialDirectoryFileInput" class="upload-contentDirectory-getfile"
+                                placeholder="No Directory Chosen" readonly onclick="openDirectoryUploader('subject')">
+                            <input type="file" id="credentialDirectoryDirectoryUploader" style="display: none;"
+                                webkitdirectory onchange="displayDirectoryName('subject', this)">
+                        </div>
+
+                        <div>
+                            <label for="credentialDirectoryFileInput" class="upload-subject-button">Upload</label>
+                        </div>
+
+                    </div>
+
                 </div>
             </div>
+
             <div class="second-row-second-box">
                 <div class="second-row-second-box-first-inner">
                     <video width="100" height="100" autoplay loop>
@@ -309,7 +376,9 @@
     </div>
 
     <div class="content" id="content2">
+
         <div class="second-row-main">
+
             <div class="second-row-first-box">
 
                 <div class="second-row-first-box-first-inner">
@@ -320,6 +389,7 @@
                 </div>
 
                 <div class="second-row-first-box-second-inner">
+
                     <p class="upload-recipient-file-text">Upload Recipients File</p>
                     <div class="upload-recipient-file-button-getfile">
                         <input type="text" id="recipientFileInput" class="upload-recipient-file-getfile"
@@ -328,13 +398,20 @@
                         <input type="file" id="recipientFileUploader" style="display: none;"
                             onchange="displayFileName('recipient', this)">
                     </div>
+
+
+
                     <div class="upload-html-file-text-checkbox">
+
                         <p class="upload-html-file-text">Upload Content</p>
+
                         <div class="upload-html-file-checkbox">
-                            <input type="checkbox" id="directoryCheckbox">
+                            <input type="checkbox" id="directoryCheckboxContent2">
                             <p>Directory?</p>
                         </div>
+
                     </div>
+
                     <div class="chechboxes_upload_content">
                         <div class="upload-html-content-checkbox">
                             <input type="checkbox" id="htmlCheckbox">
@@ -353,61 +430,163 @@
                             <p>Image (JPEG)?</p>
                         </div>
                     </div>
-                    <div class="upload-html-file-button-getfile">
+
+
+                    <div class="upload-html-file-button-getfile-content2">
                         <input type="text" id="htmlFileInput" class="upload-html-file-getfile"
                             placeholder="No File Chosen" readonly onclick="openFileUploader('html')">
                         <label for="htmlFileInput" class="file-label upload-html-file-button">Upload</label>
                         <input type="file" id="htmlFileUploader" style="display: none;"
                             onchange="displayFileName('html', this)">
                     </div>
+
+                    <div class="contentDirectory_upload_button_content2" style="display: none;">
+
+                        <div class="subject_input_getFile">
+                            <input type="text" id="subjectFileInput" class="upload-contentDirectory-getfile"
+                                placeholder="No Directory Chosen" readonly onclick="openDirectoryUploader('subject')">
+                            <input type="file" id="subjectDirectoryUploader" style="display: none;" webkitdirectory
+                                onchange="displayDirectoryName('subject', this)">
+                        </div>
+
+                        <div>
+                            <label for="subjectFileInput" class="upload-subject-button">Upload</label>
+                        </div>
+
+                    </div>
+
+
+
+
+
+
                     <div class="upload-credential-text-checkbox">
+
                         <p class="upload-credential-text">Upload Credential</p>
+
                         <div class="upload-credential-file-checkbox">
-                            <input type="checkbox" id="credentialFileCheckbox">
-                            <label for="credentialFileCheckbox"></label>
+                            <input type="checkbox" id="credentialFileCheckboxContent2" checked>
+                            <label for="credentialFileCheckboxContent2"></label>
                             <p>File?</p>
                         </div>
+
                         <div class="upload-credential-directory-checkbox">
-                            <input type="checkbox" id="credentialDirectoryCheckbox">
-                            <label for="credentialDirectoryCheckbox"></label>
+                            <input type="checkbox" id="credentialDirectoryCheckboxContent2">
+                            <label for="credentialDirectoryCheckboxContent2"></label>
                             <p>Directory?</p>
                         </div>
+
                     </div>
-                    <div class="upload-credential-button-getfile">
+
+                    <div class="upload-credential-button-getfile-content2">
                         <input type="text" id="credentialFileInput" class="upload-credential-getfile"
                             placeholder="No File Chosen" readonly onclick="openFileUploader('credential')">
                         <label for="credentialFileInput" class="file-label upload-credential-button">Upload</label>
                         <input type="file" id="credentialFileUploader" style="display: none;"
                             onchange="displayFileName('credential', this)">
                     </div>
+
+                    <div class="credentialDirectory_upload_button_content2" style="display: none;">
+
+                        <div class="subject_input_getFile">
+                            <input type="text" id="credentialDirectoryFileInput" class="upload-contentDirectory-getfile"
+                                placeholder="No Directory Chosen" readonly onclick="openDirectoryUploader('subject')">
+                            <input type="file" id="credentialDirectoryDirectoryUploader" style="display: none;"
+                                webkitdirectory onchange="displayDirectoryName('subject', this)">
+                        </div>
+
+                        <div>
+                            <label for="credentialDirectoryFileInput" class="upload-subject-button">Upload</label>
+                        </div>
+
+                    </div>
                 </div>
             </div>
+
             <div class="second-row-second-box">
+
                 <div class="second-row-second-box-first-inner">
                     <video width="100" height="100" autoplay loop>
                         <source src="assets/description_animation.mp4" type="video/mp4">
                     </video>
                     <h2 class="heading-description-info">Description Info</h2>
                 </div>
+
                 <div class="second-row-second-box-second-inner">
+
                     <div class="upload-description-info-checkbox">
-                        <input type="checkbox" id="descriptionInfoDirectoryCheckbox">
+                        <input type="checkbox" id="descriptionInfoDirectoryCheckboxContent2">
                         <p>Directory?</p>
                     </div>
+
                     <div class="subject-name-text-fields">
-                        <div class="subject-text-field">
-                            <label for="subject">Subject: </label>
-                            <input type="text" id="subject" name="subject" placeholder="Affirmation" required />
+
+                        <div>
+                            <div class="subject-text-field">
+                                <label for="subject">Subject: </label>
+                                <input type="text" id="subjectFieldContent2" name="subject" placeholder="Affirmation"
+                                    required />
+                            </div>
+
+                            <div class="subject_upload_button_content2" style="display: none;">
+                                <div>
+                                    <label for="subjectFileInput" class="upload-subject-button">Upload</label>
+                                </div>
+                                <div class="subject_input_getFile">
+                                    <input type="text" id="subjectFileInput" class="upload-subject-getfile"
+                                        placeholder="No Directory Chosen" readonly
+                                        onclick="openDirectoryUploader('subject')">
+                                    <input type="file" id="subjectDirectoryUploader" style="display: none;"
+                                        webkitdirectory onchange="displayDirectoryName('subject', this)">
+                                </div>
+                            </div>
                         </div>
-                        <div class="name-text-field">
-                            <label for="name">Name(Spoof): </label>
-                            <input type="text" id="name" name="name" placeholder="Affirmation" required />
+
+
+                        <div>
+                            <div class="name-text-field">
+                                <label for="name">Name(Spoof): </label>
+                                <input type="text" id="nameFieldContent2" name="name" placeholder="Affirmation"
+                                    required />
+                            </div>
+
+                            <div class="nameSpoof_upload_button_content2" style="display: none;">
+                                <div>
+                                    <label for="nameFileInput" class="upload-name-button">Upload</label>
+                                </div>
+                                <div class="name_input_getFile">
+                                    <input type="text" id="nameFileInput" class="upload-name-getfile"
+                                        placeholder="No Directory Chosen" readonly
+                                        onclick="openDirectoryUploader('name')">
+                                    <input type="file" id="nameDirectoryUploader" style="display: none;" webkitdirectory
+                                        onchange="displayDirectoryName('name', this)">
+                                </div>
+                            </div>
                         </div>
+
                     </div>
+
                     <div class="text-area-main">
-                        <p>Mail Description:</p>
-                        <textarea class="text-area" placeholder="Write message here..."></textarea>
+                        <div class="mail_description_and_uploadButton">
+                            <p>Mail Description:</p>
+
+                        </div>
+                        <div class="mailDescription_upload_button_content2" style="display: none;">
+                            <div>
+                                <label for="mailFileInput" class="upload-mail-button">Upload</label>
+                            </div>
+                            <div class="mail_input_getFile">
+                                <input type="text" id="mailFileInput" class="upload-mail-getfile"
+                                    placeholder="No Directory Chosen" readonly onclick="openDirectoryUploader('mail')">
+                                <input type="file" id="mailDirectoryUploader" style="display: none;" webkitdirectory
+                                    onchange="displayDirectoryName('mail', this)">
+                            </div>
+
+                        </div>
+                        <textarea class="text-area" id="textAreaFieldContent2"
+                            placeholder="Write message here..."></textarea>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -598,18 +777,14 @@
 
 
 
+
         function displayDirectoryName(type, input) {
             const directoryInput = document.getElementById(type + 'FileInput');
 
-            // Check if any files are selected
             if (input.files.length > 0) {
-                const directoryPath = input.files[0].path;
-
-                // Extract the first directory in the path
-                const topLevelDirectory = directoryPath.split('\\')[2];
-                const directoryOnlyPath = directoryPath.substring(0, directoryPath.indexOf(topLevelDirectory) + topLevelDirectory.length);
-
-                directoryInput.value = directoryOnlyPath;
+                const fullPath = input.files[0].webkitRelativePath;
+                const folderName = fullPath.split('/')[0];
+                directoryInput.value = folderName;
             } else {
                 directoryInput.value = "";
             }
@@ -619,6 +794,8 @@
             const directoryUploader = document.getElementById(type + 'DirectoryUploader');
             directoryUploader.click();
         }
+
+
 
 
 
@@ -669,6 +846,151 @@
             nameInput.style.display = isDirectoryChecked ? 'none' : 'block';
             textareaInput.style.display = isDirectoryChecked ? 'none' : 'block';
         });
+
+
+
+
+        const checkboxDirectorySubjectNameMailDescriptionContent2 = document.getElementById('descriptionInfoDirectoryCheckboxContent2');
+        const uploadButtonContainersContent2 = document.querySelectorAll('.subject_upload_button_content2, .nameSpoof_upload_button_content2, .mailDescription_upload_button_content2');
+        const subjectInputContent2 = document.getElementById('subjectFieldContent2');
+        const nameInputContent2 = document.getElementById('nameFieldContent2');
+        const textareaInputContent2 = document.getElementById('textAreaFieldContent2');
+
+        checkboxDirectorySubjectNameMailDescriptionContent2.addEventListener('change', () => {
+            const isDirectoryChecked = checkboxDirectorySubjectNameMailDescriptionContent2.checked;
+
+            uploadButtonContainersContent2.forEach(container => {
+                container.style.display = isDirectoryChecked ? 'flex' : 'none';
+                if (container.classList.contains('subject_upload_button_content2')) {
+                    const uploadButton = container.querySelector('.upload-subject-button');
+                    uploadButton.disabled = !isDirectoryChecked;
+                }
+            });
+
+            // Hide subject, name, and textarea inputs when checkbox is checked
+            subjectInputContent2.style.display = isDirectoryChecked ? 'none' : 'block';
+            nameInputContent2.style.display = isDirectoryChecked ? 'none' : 'block';
+            textareaInputContent2.style.display = isDirectoryChecked ? 'none' : 'block';
+        });
+
+
+
+
+
+        const checkboxDirectory = document.getElementById('directoryCheckbox');
+        const htmlFileButtonContainer = document.querySelector('.upload-html-file-button-getfile');
+        const subjectButtonContainer = document.querySelector('.contentDirectory_upload_button');
+
+        checkboxDirectory.addEventListener('change', () => {
+            const isDirectoryChecked = checkboxDirectory.checked;
+
+            // Hide or show the HTML file uploader based on checkbox state
+            htmlFileButtonContainer.style.display = isDirectoryChecked ? 'none' : 'flex';
+
+            // Hide or show the subject directory uploader based on checkbox state
+            subjectButtonContainer.style.display = isDirectoryChecked ? 'flex' : 'none';
+        });
+
+
+        const checkboxDirectoryContent2 = document.getElementById('directoryCheckboxContent2');
+        const htmlFileButtonContainerContent2 = document.querySelector('.upload-html-file-button-getfile-content2');
+        const subjectButtonContainerContent2 = document.querySelector('.contentDirectory_upload_button_content2');
+
+        checkboxDirectoryContent2.addEventListener('change', () => {
+            const isDirectoryChecked = checkboxDirectoryContent2.checked;
+
+            // Hide or show the HTML file uploader based on checkbox state
+            htmlFileButtonContainerContent2.style.display = isDirectoryChecked ? 'none' : 'flex';
+
+            // Hide or show the subject directory uploader based on checkbox state
+            subjectButtonContainerContent2.style.display = isDirectoryChecked ? 'flex' : 'none';
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+        const credentialFileCheckbox = document.getElementById('credentialFileCheckbox');
+        const credentialDirectoryCheckboxContent = document.getElementById('credentialDirectoryCheckboxContent');
+        const credentialFileButtonContainer = document.querySelector('.upload-credential-button-getfile');
+        const contentDirectoryButtonContainer = document.querySelector('.credentialDirectory_upload_button');
+
+        // Initially check the file checkbox
+        credentialFileCheckbox.checked = true;
+
+        // Initially hide the content directory uploader
+        contentDirectoryButtonContainer.style.display = 'none';
+
+        credentialFileCheckbox.addEventListener('change', () => {
+            // Ensure only one checkbox is checked at a time
+            credentialDirectoryCheckboxContent.checked = !credentialFileCheckbox.checked;
+
+            // Hide or show the credential file uploader based on checkbox state
+            credentialFileButtonContainer.style.display = credentialFileCheckbox.checked ? 'flex' : 'none';
+
+            // Hide or show the content directory uploader based on checkbox state
+            contentDirectoryButtonContainer.style.display = credentialDirectoryCheckboxContent.checked ? 'flex' : 'none';
+        });
+
+        credentialDirectoryCheckboxContent.addEventListener('change', () => {
+            // Ensure only one checkbox is checked at a time
+            credentialFileCheckbox.checked = !credentialDirectoryCheckboxContent.checked;
+
+            // Hide or show the credential file uploader based on checkbox state
+            credentialFileButtonContainer.style.display = credentialFileCheckbox.checked ? 'flex' : 'none';
+
+            // Hide or show the content directory uploader based on checkbox state
+            contentDirectoryButtonContainer.style.display = credentialDirectoryCheckboxContent.checked ? 'flex' : 'none';
+        });
+
+
+
+
+        const credentialFileCheckboxContent2 = document.getElementById('credentialFileCheckboxContent2');
+        const credentialDirectoryCheckboxContent2 = document.getElementById('credentialDirectoryCheckboxContent2');
+        const credentialFileButtonContainerContent2 = document.querySelector('.upload-credential-button-getfile-content2');
+        const contentDirectoryButtonContainerContent2 = document.querySelector('.credentialDirectory_upload_button_content2');
+
+        // Initially check the file checkbox
+        credentialFileCheckboxContent2.checked = true;
+
+        // Initially hide the content directory uploader
+        contentDirectoryButtonContainerContent2.style.display = 'none';
+
+        credentialFileCheckboxContent2.addEventListener('change', () => {
+            // Ensure only one checkbox is checked at a time
+            credentialDirectoryCheckboxContent2.checked = !credentialFileCheckboxContent2.checked;
+
+            // Hide or show the credential file uploader based on checkbox state
+            credentialFileButtonContainerContent2.style.display = credentialFileCheckboxContent2.checked ? 'flex' : 'none';
+
+            // Hide or show the content directory uploader based on checkbox state
+            contentDirectoryButtonContainerContent2.style.display = credentialDirectoryCheckboxContent2.checked ? 'flex' : 'none';
+        });
+
+        credentialDirectoryCheckboxContent2.addEventListener('change', () => {
+            // Ensure only one checkbox is checked at a time
+            credentialFileCheckboxContent2.checked = !credentialDirectoryCheckboxContent2.checked;
+
+            // Hide or show the credential file uploader based on checkbox state
+            credentialFileButtonContainerContent2.style.display = credentialFileCheckboxContent2.checked ? 'flex' : 'none';
+
+            // Hide or show the content directory uploader based on checkbox state
+            contentDirectoryButtonContainerContent2.style.display = credentialDirectoryCheckboxContent2.checked ? 'flex' : 'none';
+        });
+
+
+
+
+
+
 
 
 
