@@ -81,7 +81,7 @@
                         <p class="upload-html-file-text">Upload Content</p>
 
                         <div class="upload-html-file-checkbox">
-                            <input type="checkbox" id="directoryCheckbox">
+                            <input type="checkbox" id="directoryCheckbox" onchange="displayDirectoryName('html')">
                             <p>Directory?</p>
                         </div>
 
@@ -89,20 +89,20 @@
 
                     <div class="chechboxes_upload_content">
                         <div class="upload-html-content-checkbox">
-                            <input type="checkbox" id="htmlCheckbox">
+                            <input type="radio" name="fileSelectRadio" value="html" checked>
                             <p>HTML?</p>
                         </div>
                         <div class="upload-html-pdf-checkbox">
-                            <input type="checkbox" id="pdfCheckbox">
+                            <input type="radio" name="fileSelectRadio" value="pdf">
                             <p>PDF?</p>
                         </div>
                         <div class="upload-html-imagePng-checkbox">
-                            <input type="checkbox" id="imagePngCheckbox">
+                            <input type="radio" name="fileSelectRadio" value="png">
                             <p>Image (PNG)?</p>
                         </div>
                         <div class="upload-html-imageJpeg-checkbox">
-                            <input type="checkbox" id="imageJpegCheckbox">
-                            <p>Image (JPEG)?</p>
+                            <input type="radio" name="fileSelectRadio" value="jpg">
+                            <p>Image (JPG)?</p>
                         </div>
                     </div>
 
@@ -114,42 +114,17 @@
                             onchange="displayFileName('html', this)">
                     </div>
 
-                    <div class="contentDirectory_upload_button" style="display: none;">
-
-                        <div class="subject_input_getFile">
-                            <input type="text" id="subjectFileInput" class="upload-contentDirectory-getfile"
-                                placeholder="No Directory Chosen" readonly onclick="openDirectoryUploader('subject')">
-                            <input type="file" id="subjectDirectoryUploader" style="display: none;" webkitdirectory
-                                onchange="displayDirectoryName('subject', this)">
-                        </div>
-
-                        <div>
-                            <label for="subjectFileInput" class="upload-subject-button">Upload</label>
-                        </div>
-
-                    </div>
-
-
-
-
-
 
 
 
                     <div class="upload-credential-text-checkbox">
 
-
                         <p class="upload-credential-text">Upload Credential</p>
 
                         <div class="upload-credential-file-checkbox">
-                            <input type="checkbox" id="credentialFileCheckbox" checked>
+                            <input type="checkbox" id="credentialFileCheckbox"
+                                onchange="displayDirectoryName('credential')">
                             <label for="credentialFileCheckbox"></label>
-                            <p>File?</p>
-                        </div>
-
-                        <div class="upload-credential-directory-checkbox">
-                            <input type="checkbox" id="credentialDirectoryCheckboxContent">
-                            <label for="credentialDirectoryCheckboxContent"></label>
                             <p>Directory?</p>
                         </div>
 
@@ -163,23 +138,15 @@
                             onchange="displayFileName('credential', this)">
                     </div>
 
-                    <div class="credentialDirectory_upload_button" style="display: none;">
-
-                        <div class="subject_input_getFile">
-                            <input type="text" id="credentialDirectoryFileInput" class="upload-contentDirectory-getfile"
-                                placeholder="No Directory Chosen" readonly onclick="openDirectoryUploader('subject')">
-                            <input type="file" id="credentialDirectoryDirectoryUploader" style="display: none;"
-                                webkitdirectory onchange="displayDirectoryName('subject', this)">
-                        </div>
-
-                        <div>
-                            <label for="credentialDirectoryFileInput" class="upload-subject-button">Upload</label>
-                        </div>
-
-                    </div>
-
                 </div>
             </div>
+
+
+
+
+
+
+
 
             <div class="second-row-second-box">
                 <div class="second-row-second-box-first-inner">
@@ -191,7 +158,8 @@
                 <div class="second-row-second-box-second-inner">
 
                     <div class="upload-description-info-checkbox">
-                        <input type="checkbox" id="descriptionInfoDirectoryCheckbox">
+                        <input type="checkbox" id="descriptionInfoDirectoryCheckbox"
+                            onchange="hideAndShowDescriptionInfo()">
                         <p>Directory?</p>
                     </div>
 
@@ -211,9 +179,9 @@
                                 <div class="subject_input_getFile">
                                     <input type="text" id="subjectFileInput" class="upload-subject-getfile"
                                         placeholder="No Directory Chosen" readonly
-                                        onclick="openDirectoryUploader('subject')">
+                                        onclick="openDirectoryUploaderDescriptionInfo('subject')">
                                     <input type="file" id="subjectDirectoryUploader" style="display: none;"
-                                        webkitdirectory onchange="displayDirectoryName('subject', this)">
+                                        webkitdirectory onchange="displayDirectoryNameDescriptionInfo('subject', this)">
                                 </div>
                             </div>
                         </div>
@@ -228,14 +196,15 @@
 
                             <div class="nameSpoof_upload_button" style="display: none;">
                                 <div>
-                                    <label for="nameFileInput" class="upload-name-button">Upload</label>
+                                    <label for="nameSpoofFileInput" class="upload-name-button">Upload</label>
                                 </div>
-                                <div class="name_input_getFile">
-                                    <input type="text" id="nameFileInput" class="upload-name-getfile"
+                                <div class="subject_input_getFile">
+                                    <input type="text" id="nameSpoofFileInput" class="upload-subject-getfile"
                                         placeholder="No Directory Chosen" readonly
-                                        onclick="openDirectoryUploader('name')">
-                                    <input type="file" id="nameDirectoryUploader" style="display: none;" webkitdirectory
-                                        onchange="displayDirectoryName('name', this)">
+                                        onclick="openDirectoryUploaderDescriptionInfo('nameSpoof')">
+                                    <input type="file" id="nameSpoofDirectoryUploader" style="display: none;"
+                                        webkitdirectory
+                                        onchange="displayDirectoryNameDescriptionInfo('nameSpoof', this)">
                                 </div>
                             </div>
                         </div>
@@ -249,13 +218,15 @@
                         </div>
                         <div class="mailDescription_upload_button" style="display: none;">
                             <div>
-                                <label for="mailFileInput" class="upload-mail-button">Upload</label>
+                                <label for="mailDescriptionFileInput" class="upload-mail-button">Upload</label>
                             </div>
                             <div class="mail_input_getFile">
-                                <input type="text" id="mailFileInput" class="upload-mail-getfile"
-                                    placeholder="No Directory Chosen" readonly onclick="openDirectoryUploader('mail')">
-                                <input type="file" id="mailDirectoryUploader" style="display: none;" webkitdirectory
-                                    onchange="displayDirectoryName('mail', this)">
+                                <input type="text" id="mailDescriptionFileInput" class="upload-mail-getfile"
+                                    placeholder="No Directory Chosen" readonly
+                                    onclick="openDirectoryUploaderDescriptionInfo('mailDescription')">
+                                <input type="file" id="mailDescriptionDirectoryUploader" style="display: none;"
+                                    webkitdirectory
+                                    onchange="displayDirectoryNameDescriptionInfo('mailDescription', this)">
                             </div>
 
                         </div>
@@ -276,9 +247,9 @@
                 </div>
                 <div class="third-row-html-format-text-checkbox">
                     <div class="third-row-htmlformat-pdfimage">
-                        <p class="third-row-html-format-text">Send HTML in format?</p>
+                        <p class="third-row-html-format-text">Format of Attachment?</p>
                         <div class="third-row-html-format-checkbox-pdf">
-                            <input type="checkbox" id="pdffCheckbox">
+                            <input type="checkbox" id="pdffCheckbox" checked>
                             <label for="pdffCheckbox"></label>
                             <p>PDF</p>
                         </div>
@@ -296,12 +267,12 @@
                     <div class="third-row-htmlformat-noyes">
                         <p class="third-row-htmlformat-text">Send HTML in format?</p>
                         <div class="third-row-htmlformat-checkbox-no">
-                            <input type="checkbox" id="noCheckbox">
+                            <input type="radio" name="radioyesno" value="no" id="noCheckbox">
                             <label for="noCheckbox"></label>
                             <p>No</p>
                         </div>
                         <div class="third-row-html-format-checkbox-yes">
-                            <input type="checkbox" id="yesCheckbox">
+                            <input type="radio" name="radioyesno" value="yes" id="yesCheckbox" checked>
                             <label for="yesCheckbox"></label>
                             <p>Yes</p>
                         </div>
@@ -314,7 +285,9 @@
                 <button class="third-row-button2"><i class="fa-regular fa-circle-stop stop_icon"></i> Stop Mail</button>
                 <button class="third-row-button3"><i class="fa-solid fa-right-from-bracket logout_icon"></i>
                     Logout</button>
-                <button class="third-row-button4"><i class="fa-solid fa-question help_icon"></i> Help</button>
+                <button class="third-row-button4" id="openModalButton"><i class="fa-solid fa-question help_icon"></i>
+                    Help</button>
+
             </div>
         </div>
         <div class="fourth-row-main">
@@ -399,14 +372,13 @@
                             onchange="displayFileName('recipient', this)">
                     </div>
 
-
-
                     <div class="upload-html-file-text-checkbox">
 
                         <p class="upload-html-file-text">Upload Content</p>
 
                         <div class="upload-html-file-checkbox">
-                            <input type="checkbox" id="directoryCheckboxContent2">
+                            <input type="checkbox" id="directoryCheckboxContent2"
+                                onchange="displayDirectoryName('html2')">
                             <p>Directory?</p>
                         </div>
 
@@ -414,47 +386,31 @@
 
                     <div class="chechboxes_upload_content">
                         <div class="upload-html-content-checkbox">
-                            <input type="checkbox" id="htmlCheckbox">
+                            <input type="radio" name="fileSelectRadio2" value="html" checked>
                             <p>HTML?</p>
                         </div>
                         <div class="upload-html-pdf-checkbox">
-                            <input type="checkbox" id="pdfCheckbox">
+                            <input type="radio" name="fileSelectRadio2" value="pdf">
                             <p>PDF?</p>
                         </div>
                         <div class="upload-html-imagePng-checkbox">
-                            <input type="checkbox" id="imagePngCheckbox">
+                            <input type="radio" name="fileSelectRadio2" value="png">
                             <p>Image (PNG)?</p>
                         </div>
                         <div class="upload-html-imageJpeg-checkbox">
-                            <input type="checkbox" id="imageJpegCheckbox">
-                            <p>Image (JPEG)?</p>
+                            <input type="radio" name="fileSelectRadio2" value="jpg">
+                            <p>Image (JPG)?</p>
                         </div>
                     </div>
 
 
-                    <div class="upload-html-file-button-getfile-content2">
-                        <input type="text" id="htmlFileInput" class="upload-html-file-getfile"
-                            placeholder="No File Chosen" readonly onclick="openFileUploader('html')">
-                        <label for="htmlFileInput" class="file-label upload-html-file-button">Upload</label>
-                        <input type="file" id="htmlFileUploader" style="display: none;"
-                            onchange="displayFileName('html', this)">
+                    <div class="upload-html-file-button-getfile">
+                        <input type="text" id="html2FileInput" class="upload-html-file-getfile"
+                            placeholder="No File Chosen" readonly onclick="openFileUploader('html2')">
+                        <label for="html2FileInput" class="file-label upload-html-file-button">Upload</label>
+                        <input type="file" id="html2FileUploader" style="display: none;"
+                            onchange="displayFileName('html2', this)">
                     </div>
-
-                    <div class="contentDirectory_upload_button_content2" style="display: none;">
-
-                        <div class="subject_input_getFile">
-                            <input type="text" id="subjectFileInput" class="upload-contentDirectory-getfile"
-                                placeholder="No Directory Chosen" readonly onclick="openDirectoryUploader('subject')">
-                            <input type="file" id="subjectDirectoryUploader" style="display: none;" webkitdirectory
-                                onchange="displayDirectoryName('subject', this)">
-                        </div>
-
-                        <div>
-                            <label for="subjectFileInput" class="upload-subject-button">Upload</label>
-                        </div>
-
-                    </div>
-
 
 
 
@@ -465,43 +421,33 @@
                         <p class="upload-credential-text">Upload Credential</p>
 
                         <div class="upload-credential-file-checkbox">
-                            <input type="checkbox" id="credentialFileCheckboxContent2" checked>
+                            <input type="checkbox" id="credentialFileCheckboxContent2"
+                                onchange="displayDirectoryName('credential2')">
                             <label for="credentialFileCheckboxContent2"></label>
-                            <p>File?</p>
-                        </div>
-
-                        <div class="upload-credential-directory-checkbox">
-                            <input type="checkbox" id="credentialDirectoryCheckboxContent2">
-                            <label for="credentialDirectoryCheckboxContent2"></label>
                             <p>Directory?</p>
                         </div>
 
                     </div>
 
                     <div class="upload-credential-button-getfile-content2">
-                        <input type="text" id="credentialFileInput" class="upload-credential-getfile"
-                            placeholder="No File Chosen" readonly onclick="openFileUploader('credential')">
-                        <label for="credentialFileInput" class="file-label upload-credential-button">Upload</label>
-                        <input type="file" id="credentialFileUploader" style="display: none;"
-                            onchange="displayFileName('credential', this)">
+                        <input type="text" id="credential2FileInput" class="upload-credential-getfile"
+                            placeholder="No File Chosen" readonly onclick="openFileUploader('credential2')">
+                        <label for="credential2FileInput" class="file-label upload-credential-button">Upload</label>
+                        <input type="file" id="credential2FileUploader" style="display: none;"
+                            onchange="displayFileName('credential2', this)">
                     </div>
 
-                    <div class="credentialDirectory_upload_button_content2" style="display: none;">
 
-                        <div class="subject_input_getFile">
-                            <input type="text" id="credentialDirectoryFileInput" class="upload-contentDirectory-getfile"
-                                placeholder="No Directory Chosen" readonly onclick="openDirectoryUploader('subject')">
-                            <input type="file" id="credentialDirectoryDirectoryUploader" style="display: none;"
-                                webkitdirectory onchange="displayDirectoryName('subject', this)">
-                        </div>
 
-                        <div>
-                            <label for="credentialDirectoryFileInput" class="upload-subject-button">Upload</label>
-                        </div>
 
-                    </div>
                 </div>
             </div>
+
+
+
+
+
+
 
             <div class="second-row-second-box">
 
@@ -515,7 +461,8 @@
                 <div class="second-row-second-box-second-inner">
 
                     <div class="upload-description-info-checkbox">
-                        <input type="checkbox" id="descriptionInfoDirectoryCheckboxContent2">
+                        <input type="checkbox" id="descriptionInfoDirectoryCheckboxContent2"
+                            onchange="hideAndShowDescriptionInfo()">
                         <p>Directory?</p>
                     </div>
 
@@ -530,14 +477,15 @@
 
                             <div class="subject_upload_button_content2" style="display: none;">
                                 <div>
-                                    <label for="subjectFileInput" class="upload-subject-button">Upload</label>
+                                    <label for="subject2FileInput" class="upload-subject-button">Upload</label>
                                 </div>
                                 <div class="subject_input_getFile">
-                                    <input type="text" id="subjectFileInput" class="upload-subject-getfile"
+                                    <input type="text" id="subject2FileInput" class="upload-subject-getfile"
                                         placeholder="No Directory Chosen" readonly
-                                        onclick="openDirectoryUploader('subject')">
-                                    <input type="file" id="subjectDirectoryUploader" style="display: none;"
-                                        webkitdirectory onchange="displayDirectoryName('subject', this)">
+                                        onclick="openDirectoryUploaderDescriptionInfo('subject2')">
+                                    <input type="file" id="subject2DirectoryUploader" style="display: none;"
+                                        webkitdirectory
+                                        onchange="displayDirectoryNameDescriptionInfo('subject2', this)">
                                 </div>
                             </div>
                         </div>
@@ -552,14 +500,15 @@
 
                             <div class="nameSpoof_upload_button_content2" style="display: none;">
                                 <div>
-                                    <label for="nameFileInput" class="upload-name-button">Upload</label>
+                                    <label for="nameSpoof2FileInput" class="upload-name-button">Upload</label>
                                 </div>
-                                <div class="name_input_getFile">
-                                    <input type="text" id="nameFileInput" class="upload-name-getfile"
+                                <div class="subject_input_getFile">
+                                    <input type="text" id="nameSpoof2FileInput" class="upload-subject-getfile"
                                         placeholder="No Directory Chosen" readonly
-                                        onclick="openDirectoryUploader('name')">
-                                    <input type="file" id="nameDirectoryUploader" style="display: none;" webkitdirectory
-                                        onchange="displayDirectoryName('name', this)">
+                                        onclick="openDirectoryUploaderDescriptionInfo('nameSpoof2')">
+                                    <input type="file" id="nameSpoof2DirectoryUploader" style="display: none;"
+                                        webkitdirectory
+                                        onchange="displayDirectoryNameDescriptionInfo('nameSpoof2', this)">
                                 </div>
                             </div>
                         </div>
@@ -572,14 +521,18 @@
 
                         </div>
                         <div class="mailDescription_upload_button_content2" style="display: none;">
+
                             <div>
-                                <label for="mailFileInput" class="upload-mail-button">Upload</label>
+                                <label for="mailDescription2FileInput" class="upload-mail-button">Upload</label>
                             </div>
+
                             <div class="mail_input_getFile">
-                                <input type="text" id="mailFileInput" class="upload-mail-getfile"
-                                    placeholder="No Directory Chosen" readonly onclick="openDirectoryUploader('mail')">
-                                <input type="file" id="mailDirectoryUploader" style="display: none;" webkitdirectory
-                                    onchange="displayDirectoryName('mail', this)">
+                                <input type="text" id="mailDescription2FileInput" class="upload-mail-getfile"
+                                    placeholder="No Directory Chosen" readonly
+                                    onclick="openDirectoryUploaderDescriptionInfo('mailDescription2')">
+                                <input type="file" id="mailDescription2DirectoryUploader" style="display: none;"
+                                    webkitdirectory
+                                    onchange="displayDirectoryNameDescriptionInfo('mailDescription2', this)">
                             </div>
 
                         </div>
@@ -590,6 +543,9 @@
                 </div>
             </div>
         </div>
+
+
+
         <div class="third-row-main">
             <div class="third-row-main-inner">
                 <div class="third-row-video-options">
@@ -600,9 +556,9 @@
                 </div>
                 <div class="third-row-html-format-text-checkbox">
                     <div class="third-row-htmlformat-pdfimage">
-                        <p class="third-row-html-format-text">Send HTML in format?</p>
+                        <p class="third-row-html-format-text">Format of Attachment??</p>
                         <div class="third-row-html-format-checkbox-pdf">
-                            <input type="checkbox" id="pdffCheckbox">
+                            <input type="checkbox" id="pdffCheckbox" checked>
                             <label for="pdffCheckbox"></label>
                             <p>PDF</p>
                         </div>
@@ -620,12 +576,12 @@
                     <div class="third-row-htmlformat-noyes">
                         <p class="third-row-htmlformat-text">Send HTML in format?</p>
                         <div class="third-row-htmlformat-checkbox-no">
-                            <input type="checkbox" id="noCheckbox">
+                            <input type="radio" name="radioyesno2" value="no" id="noCheckbox">
                             <label for="noCheckbox"></label>
                             <p>No</p>
                         </div>
                         <div class="third-row-html-format-checkbox-yes">
-                            <input type="checkbox" id="yesCheckbox">
+                            <input type="radio" name="radioyesno2" value="yes" id="yesCheckbox" checked>
                             <label for="yesCheckbox"></label>
                             <p>Yes</p>
                         </div>
@@ -671,7 +627,8 @@
                 <button class="extra-row-button2"><i class="fa-regular fa-circle-stop stop_icon"></i> Stop Mail</button>
                 <button class="extra-row-button3"><i class="fa-solid fa-right-from-bracket logout_icon"></i>
                     Logout</button>
-                <button class="extra-row-button4"><i class="fa-solid fa-question help_icon"></i> Help</button>
+                <button class="third-row-button4" id="openModalButton2"><i class="fa-solid fa-question help_icon"></i>
+                    Help</button>
             </div>
         </div>
         <div class="fourth-row-main">
@@ -732,10 +689,218 @@
         </div>
     </div>
 
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModalButton"><i class="fa-regular fa-circle-xmark"></i></span>
+            <h1 class="modal_heading">Key Notes</h1>
+            <p class="modal_text">Description Goes Here</p>
+
+            <div class="fourth-row-main">
+                <div class="scrollable-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Keys</th>
+                                <th>Respresentation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>18vsadb65dsfe654</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>18vsadb65dsfe654</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>18vsadb65dsfe654</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>18vsadb65dsfe654</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>18vsadb65dsfe654</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>18vsadb65dsfe654</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>18vsadb65dsfe654</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="myModal2" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModalButton2"><i class="fa-regular fa-circle-xmark"></i></span>
+            <h1 class="modal_heading">Key Notes</h1>
+            <p class="modal_text">Description Goes Here</p>
+
+            <div class="fourth-row-main">
+                <div class="scrollable-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Keys</th>
+                                <th>Respresentation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>18vsadb65dsfe654</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>18vsadb65dsfe654</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>18vsadb65dsfe654</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>18vsadb65dsfe654</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>18vsadb65dsfe654</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>18vsadb65dsfe654</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>18vsadb65dsfe654</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
 
     <script src="functions.js"></script>
 
     <script>
+
+        const checkboxDirectory = document.getElementById('directoryCheckbox');
+        const checkboxDirectory2 = document.getElementById('directoryCheckboxContent2');
+        const htmlFileButtonContainer = document.querySelector('.upload-html-file-button-getfile');
+        const subjectButtonContainer = document.querySelector('.contentDirectory_upload_button');
+        const fileCheckbox = document.getElementById('credentialFileCheckbox');
+        const fileCheckbox2 = document.getElementById('credentialFileCheckboxContent2');
+        const directoryCheckbox = document.getElementById('credentialDirectoryCheckbox');
+
+        const checkboxDirectorySubjectNameMailDescription = document.getElementById('descriptionInfoDirectoryCheckbox');
+        const checkboxDirectorySubjectNameMailDescription2 = document.getElementById('descriptionInfoDirectoryCheckboxContent2');
+        const uploadButtonContainers = document.querySelectorAll('.subject_upload_button, .nameSpoof_upload_button, .mailDescription_upload_button');
+        const uploadButtonContainers2 = document.querySelectorAll('.subject_upload_button_content2, .nameSpoof_upload_button_content2, .mailDescription_upload_button_content2');
+        const subjectInput = document.getElementById('subjectFieldContent1');
+        const subjectInput2 = document.getElementById('subjectFieldContent2');
+        const nameInput = document.getElementById('nameFieldContent1');
+        const nameInput2 = document.getElementById('nameFieldContent2');
+        const textareaInput = document.getElementById('textAreaFieldContent1');
+        const textareaInput2 = document.getElementById('textAreaFieldContent2');
+
+        const nOCheckbox = document.getElementById('noCheckbox');
+        const yeSCheckbox = document.getElementById('yesCheckbox');
+
+        //const htmlCheckbox = document.getElementById('htmlCheckbox');
+        //const pdfCheckbox = document.getElementById('pdfCheckbox');
+        //const imagePngCheckbox = document.getElementById('imagePngCheckbox');
+        //const imageJpegCheckbox = document.getElementById('imageJpegCheckbox');
+
+        const pdfFormatCheckbox = document.getElementById('pdffCheckbox');
+        const imagePNGFormatCheckbox = document.getElementById('imagePNGGCheckbox');
+        const imageJPEGFormatCheckbox = document.getElementById('imageJPEGGCheckbox');
+
+        const formatCheckboxes = [pdfFormatCheckbox, imagePNGFormatCheckbox, imageJPEGFormatCheckbox];
+        //const checkboxes = [htmlCheckbox, pdfCheckbox, imagePngCheckbox, imageJpegCheckbox];
+
+
+
+
+
+
+        // Function to display the modal
+        const showModal = () => {
+            const modal = document.getElementById('myModal');
+            modal.style.display = 'block';
+        };
+
+        // Function to hide the modal
+        const hideModal = () => {
+            const modal = document.getElementById('myModal');
+            modal.style.display = 'none';
+        };
+
+        // Event listener for the "Help" button to open the modal
+        const openModalButton = document.getElementById('openModalButton');
+        openModalButton.addEventListener('click', showModal);
+
+        // Event listener for the close button in the modal to hide it
+        const closeModalButton = document.getElementById('closeModalButton');
+        closeModalButton.addEventListener('click', hideModal);
+
+        // Event listener to close the modal if the background is clicked
+        window.addEventListener('click', function (event) {
+            const modal = document.getElementById('myModal');
+            if (event.target === modal) {
+                hideModal();
+            }
+        });
+
+        // Function to display the modal
+        const showModal2 = () => {
+            const modal = document.getElementById('myModal2');
+            modal.style.display = 'block';
+        };
+
+        // Function to hide the modal
+        const hideModal2 = () => {
+            const modal = document.getElementById('myModal2');
+            modal.style.display = 'none';
+        };
+
+        // Event listener for the "Help" button to open the modal
+        const openModalButton2 = document.getElementById('openModalButton2');
+        openModalButton2.addEventListener('click', showModal);
+
+        // Event listener for the close button in the modal to hide it
+        const closeModalButton2 = document.getElementById('closeModalButton2');
+        closeModalButton.addEventListener('click', hideModal);
+
+        // Event listener to close the modal if the background is clicked
+        window.addEventListener('click', function (event) {
+            const modal = document.getElementById('myModal');
+            if (event.target === modal) {
+                hideModal();
+            }
+        });
+
+
+
+
+
+
+
+
+
+
         var icon = document.getElementById("darkMode_lightMode")
         icon.onclick = function () {
             document.body.classList.toggle("dark-theme")
@@ -760,39 +925,113 @@
             button.classList.add('active');
         }
 
+
+
+
+
+
+
+
+
+
         function displayFileName(type, input) {
             const fileInput = document.getElementById(type + 'FileInput');
-            const filePath = input.files[0].path;
+            var filePath = input.files[0].path;
+
+            if (type === "html") {
+                if (checkboxDirectory.checked) {
+                    filePath = filePath.split('\\').slice(0, -1).join('/')
+                }
+            } else if (type === "credential") {
+                if (fileCheckbox.checked) {
+                    filePath = filePath.split('\\').slice(0, -1).join('/')
+                }
+            } else if (type === 'html2') {
+                if (checkboxDirectory2.checked) {
+                    filePath = filePath.split('\\').slice(0, -1).join('/')
+                }
+            }
+
+            else if (type === "credential2") {
+                if (fileCheckbox2.checked) {
+                    filePath = filePath.split('\\').slice(0, -1).join('/')
+                }
+            }
+
+            //console.log(input.files[0].path.split('\\').slice(0, -1).join('/'))
+
             fileInput.value = filePath;
         }
 
         function openFileUploader(type) {
             const fileUploader = document.getElementById(type + 'FileUploader');
+
+
+            if (type === "html") {
+                const fileSelectRadio = document.querySelector('input[name="fileSelectRadio"]:checked').value;
+
+                if (checkboxDirectory.checked) {
+                    fileUploader.setAttribute('webkitdirectory', '')
+
+                } else {
+                    fileUploader.removeAttribute('webkitdirectory')
+
+                    if (fileSelectRadio == 'html') {
+                        fileUploader.setAttribute('accept', '.html')
+                    } else if (fileSelectRadio == 'pdf') {
+                        fileUploader.setAttribute('accept', '.pdf')
+                    } else if (fileSelectRadio == 'png') {
+                        fileUploader.setAttribute('accept', '.png')
+                    } else if (fileSelectRadio == 'jpg') {
+                        fileUploader.setAttribute('accept', '.jpg, .jpeg')
+                        fileUploader.setAttribute('placeholder', 'JPG(.jpg), JPEG(.jpeg)')
+                    }
+                }
+
+            } else if (type === "credential") {
+                if (fileCheckbox.checked) {
+                    fileUploader.setAttribute('webkitdirectory', '')
+                } else {
+                    fileUploader.removeAttribute('webkitdirectory')
+                }
+
+            } else if (type === 'html2') {
+
+                const fileSelectRadio2 = document.querySelector('input[name="fileSelectRadio2"]:checked').value;
+
+                if (checkboxDirectory2.checked) {
+                    fileUploader.setAttribute('webkitdirectory', '')
+
+                } else {
+                    fileUploader.removeAttribute('webkitdirectory')
+
+                    if (fileSelectRadio2 == 'html') {
+                        fileUploader.setAttribute('accept', '.html')
+                    } else if (fileSelectRadio2 == 'pdf') {
+                        fileUploader.setAttribute('accept', '.pdf')
+                    } else if (fileSelectRadio2 == 'png') {
+                        fileUploader.setAttribute('accept', '.png')
+                    } else if (fileSelectRadio2 == 'jpg') {
+                        fileUploader.setAttribute('accept', '.jpg, .jpeg')
+                        fileUploader.setAttribute('placeholder', 'JPG(.jpg), JPEG(.jpeg)')
+                    }
+                }
+            } else if (type === "credential2") {
+                if (fileCheckbox2.checked) {
+                    fileUploader.setAttribute('webkitdirectory', '')
+                } else {
+                    fileUploader.removeAttribute('webkitdirectory')
+                }
+
+            }
+
             fileUploader.click();
         }
 
-
-
-
-
-
-
-
-        function displayDirectoryName(type, input) {
+        function displayDirectoryName(type) {
             const directoryInput = document.getElementById(type + 'FileInput');
 
-            if (input.files.length > 0) {
-                const fullPath = input.files[0].webkitRelativePath;
-                const folderName = fullPath.split('/')[0];
-                directoryInput.value = folderName;
-            } else {
-                directoryInput.value = "";
-            }
-        }
-
-        function openDirectoryUploader(type) {
-            const directoryUploader = document.getElementById(type + 'DirectoryUploader');
-            directoryUploader.click();
+            directoryInput.value = "";
         }
 
 
@@ -802,50 +1041,70 @@
 
 
 
-        const fileCheckbox = document.getElementById('credentialFileCheckbox');
-        const directoryCheckbox = document.getElementById('credentialDirectoryCheckbox');
-        const nOCheckbox = document.getElementById('noCheckbox');
-        const yeSCheckbox = document.getElementById('yesCheckbox');
-
-        const htmlCheckbox = document.getElementById('htmlCheckbox');
-        const pdfCheckbox = document.getElementById('pdfCheckbox');
-        const imagePngCheckbox = document.getElementById('imagePngCheckbox');
-        const imageJpegCheckbox = document.getElementById('imageJpegCheckbox');
-
-        const pdfFormatCheckbox = document.getElementById('pdffCheckbox');
-        const imagePNGFormatCheckbox = document.getElementById('imagePNGGCheckbox');
-        const imageJPEGFormatCheckbox = document.getElementById('imageJPEGGCheckbox');
-
-        const formatCheckboxes = [pdfFormatCheckbox, imagePNGFormatCheckbox, imageJPEGFormatCheckbox];
-
-        const checkboxes = [htmlCheckbox, pdfCheckbox, imagePngCheckbox, imageJpegCheckbox];
 
 
-
-
-
-        const checkboxDirectorySubjectNameMailDescription = document.getElementById('descriptionInfoDirectoryCheckbox');
-        const uploadButtonContainers = document.querySelectorAll('.subject_upload_button, .nameSpoof_upload_button, .mailDescription_upload_button');
-        const subjectInput = document.getElementById('subjectFieldContent1');
-        const nameInput = document.getElementById('nameFieldContent1');
-        const textareaInput = document.getElementById('textAreaFieldContent1');
-
-        checkboxDirectorySubjectNameMailDescription.addEventListener('change', () => {
+        function hideAndShowDescriptionInfo() {
             const isDirectoryChecked = checkboxDirectorySubjectNameMailDescription.checked;
+            const isDirectoryChecked2 = checkboxDirectorySubjectNameMailDescription2.checked;
 
             uploadButtonContainers.forEach(container => {
                 container.style.display = isDirectoryChecked ? 'flex' : 'none';
                 if (container.classList.contains('subject_upload_button')) {
                     const uploadButton = container.querySelector('.upload-subject-button');
                     uploadButton.disabled = !isDirectoryChecked;
+
+                }
+            });
+
+            uploadButtonContainers2.forEach(container => {
+                container.style.display = isDirectoryChecked2 ? 'flex' : 'none';
+                if (container.classList.contains('subject_upload_button_content2')) {
+                    const uploadButton = container.querySelector('.upload-subject-button');
+                    uploadButton.disabled = !isDirectoryChecked2;
                 }
             });
 
             // Hide subject, name, and textarea inputs when checkbox is checked
             subjectInput.style.display = isDirectoryChecked ? 'none' : 'block';
+            subjectInput.value = '';
+
+            subjectInput2.style.display = isDirectoryChecked2 ? 'none' : 'block';
+            subjectInput2.value = '';
+
             nameInput.style.display = isDirectoryChecked ? 'none' : 'block';
+            nameInput.value = '';
+
+            nameInput2.style.display = isDirectoryChecked2 ? 'none' : 'block';
+            nameInput2.value = '';
+
             textareaInput.style.display = isDirectoryChecked ? 'none' : 'block';
-        });
+            textareaInput.value = '';
+
+            textareaInput2.style.display = isDirectoryChecked2 ? 'none' : 'block';
+            textareaInput2.value = '';
+        }
+
+
+        function displayDirectoryNameDescriptionInfo(type, input) {
+            const directoryInput = document.getElementById(type + 'FileInput');
+
+            const folderName = input.files[0].path.split('\\').slice(0, -1).join('/');
+
+            directoryInput.value = folderName;
+        }
+
+        function openDirectoryUploaderDescriptionInfo(type) {
+            const directoryUploader = document.getElementById(type + 'DirectoryUploader');
+            directoryUploader.click();
+        }
+
+        //checkboxDirectorySubjectNameMailDescription.addEventListener('change', () => {});
+
+
+
+
+
+
 
 
 
@@ -877,19 +1136,6 @@
 
 
 
-        const checkboxDirectory = document.getElementById('directoryCheckbox');
-        const htmlFileButtonContainer = document.querySelector('.upload-html-file-button-getfile');
-        const subjectButtonContainer = document.querySelector('.contentDirectory_upload_button');
-
-        checkboxDirectory.addEventListener('change', () => {
-            const isDirectoryChecked = checkboxDirectory.checked;
-
-            // Hide or show the HTML file uploader based on checkbox state
-            htmlFileButtonContainer.style.display = isDirectoryChecked ? 'none' : 'flex';
-
-            // Hide or show the subject directory uploader based on checkbox state
-            subjectButtonContainer.style.display = isDirectoryChecked ? 'flex' : 'none';
-        });
 
 
         const checkboxDirectoryContent2 = document.getElementById('directoryCheckboxContent2');
@@ -921,9 +1167,6 @@
         const credentialDirectoryCheckboxContent = document.getElementById('credentialDirectoryCheckboxContent');
         const credentialFileButtonContainer = document.querySelector('.upload-credential-button-getfile');
         const contentDirectoryButtonContainer = document.querySelector('.credentialDirectory_upload_button');
-
-        // Initially check the file checkbox
-        credentialFileCheckbox.checked = true;
 
         // Initially hide the content directory uploader
         contentDirectoryButtonContainer.style.display = 'none';
@@ -987,18 +1230,6 @@
         });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
         checkboxes.forEach(checkbox => {
             checkbox.addEventListener('change', function () {
                 if (this.checked) {
@@ -1058,6 +1289,10 @@
                 nOCheckbox.checked = false;
             }
         });
+
+
+
+
 
     </script>
 
